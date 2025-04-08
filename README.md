@@ -20,7 +20,6 @@ This portfolio is being built with:
 | **Flutter Web** | Cross-platform, responsive frontend         |
 | **Dart**        | Clean architecture and modern UI logic      |
 | **Golang**      | Fast backend API for contact & dynamic data |
-| **GitHub Pages / Firebase** | Deployment & hosting            |
 
 ---
 
