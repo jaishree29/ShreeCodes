@@ -1,16 +1,43 @@
-# jaishree
+# 🌐 ShreeCodes — Portfolio Website (Coming Soon)
 
-A new Flutter project.
+Welcome to **ShreeCodes**, the upcoming personal portfolio.
 
-## Getting Started
+This website is currently in development, and will soon showcase:
+- 📌 My **professional journey**
+- 💼 Key **projects**
+- 🛠️ **Technical skills**
+- 🌟 **Achievements & experience**
+- 🤝 Ways to **connect** with me!
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 📌 About This Project
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This portfolio is being built with:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Tech Stack      | Purpose                                     |
+|-----------------|-----------------------------------------    |
+| **Flutter Web** | Cross-platform, responsive frontend         |
+| **Dart**        | Clean architecture and modern UI logic      |
+| **Golang**      | Fast backend API for contact & dynamic data |
+| **GitHub Pages / Firebase** | Deployment & hosting            |
+
+---
+
+## 🧩 Planned Sections
+
+- **Navbar** – Persistent and scroll-linked navigation
+- **Profile** – Intro with photo and social links
+- **About Me** – My story, values, and goals
+- **Projects** – Highlights of apps and tools I’ve built
+- **Experience** – Roles, internships, and learning
+- **Contact** – Easy ways to reach out
+- **Footer** – Clean, minimal site footer
+
+---
+
+## 📱 Responsive by Design
+
+Every section will be optimized for **mobile**, **tablet**, and **desktop** viewing using a custom responsive layout system built in Dart, making your experience seamless no matter the screen.
+
+---
