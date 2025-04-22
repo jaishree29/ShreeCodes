@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
+import 'package:jaishree/utils/responsive_builder.dart';
 import 'package:jaishree/views/home_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -36,6 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ResponsiveBuilder.isMobile(context);
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -47,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Text(
                 "ShreeCodes",
                 style: GoogleFonts.poppins(
-                  fontSize: 24.sp,
+                  fontSize: isMobile ? 28.sp : 24.sp,
                   color: MyColors.primaryColor,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 1.5,
