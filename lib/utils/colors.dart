@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 class MyColors {
-  static const Color primaryColor = Color.fromARGB(255, 0, 85, 255);
+  static const Color primaryColor = Color.fromARGB(255, 0, 81, 255);
   static const Color secondaryColor = Color.fromARGB(255, 158, 211, 255);
   static const Color backgroundColor = Color.fromARGB(255, 214, 226, 255);
   static const Color textColor = Color.fromARGB(255, 65, 65, 65);
