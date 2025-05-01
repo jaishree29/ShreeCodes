@@ -132,10 +132,10 @@ class _HomePageState extends State<HomePage> {
                             width: 200.sp,
                             child: Text(
                               'Full-stack developer specializing in building exceptional digital experiences. Transforming ideas into elegant solutions through clean code and intuitive design.',
-                              style: GoogleFonts.interTight(
-                                fontSize: 7.sp,
+                              style: GoogleFonts.dmSans(
+                                fontSize: 5.5.sp,
                                 fontWeight: FontWeight.w400,
-                                color: MyColors.textColor,
+                                color: Colors.black.withOpacity(0.6),
                               ),
                             ),
                           ),
