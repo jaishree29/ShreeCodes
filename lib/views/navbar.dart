@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/responsive_builder.dart';
+import 'package:jaishree/widgets/elevated_button.dart';
 
 class Navbar extends StatelessWidget {
   const Navbar({super.key, required this.scaffoldKey});
@@ -16,7 +17,7 @@ class Navbar extends StatelessWidget {
     return Container(
       padding: isMobile
           ? EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h)
-          : EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
+          : EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
       color: Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -25,35 +26,39 @@ class Navbar extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: isMobile ? EdgeInsets.all(8.sp) : EdgeInsets.all(5.sp),
+                padding: isMobile ? EdgeInsets.all(8.sp) : EdgeInsets.all(3.sp),
                 decoration: BoxDecoration(
-                  color: MyColors.primaryColor,
+                  gradient: MyColors.linerGradient,
                   borderRadius: isMobile
-                      ? BorderRadius.circular(8.sp)
+                      ? BorderRadius.circular(6.sp)
                       : isTablet
-                          ? BorderRadius.circular(12.r)
-                          : BorderRadius.circular(15.r),
+                          ? BorderRadius.circular(7.r)
+                          : BorderRadius.circular(11.r),
                 ),
                 child: Text(
                   'SC',
-                  style: GoogleFonts.poppins(
+                  style: GoogleFonts.interTight(
                     fontSize: isMobile
                         ? 12.sp
                         : isTablet
                             ? 8.sp
                             : 6.sp,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                     color: Colors.white,
                   ),
                 ),
               ),
               if (!ResponsiveBuilder.isMobile(context)) ...[
-                SizedBox(width: 8.w),
+                SizedBox(width: 4.w),
                 Text(
                   'ShreeCodes',
-                  style: GoogleFonts.poppins(
+                  style: GoogleFonts.interTight(
                     fontSize:
-                        ResponsiveBuilder.isTablet(context) ? 10.sp : 8.sp,
+                        isTablet ? 10.sp : 7.sp,
+                    // foreground: Paint()
+                    //   ..shader = MyColors.linerGradient.createShader(
+                    //     Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
+                    //   ),
                     fontWeight: FontWeight.w600,
                     color: MyColors.primaryColor,
                   ),
@@ -70,6 +75,15 @@ class Navbar extends StatelessWidget {
                 _NavItem(title: 'About'),
                 _NavItem(title: 'Projects'),
                 _NavItem(title: 'Contact'),
+                SizedBox(width: 5.w),
+                MyElevatedButton(
+                  padding: EdgeInsets.symmetric(horizontal: 3.sp, vertical: 1.sp),
+                  borderRadius: 2.sp,
+                  text: 'Let\'s Talk',
+                  onPressed: () {},
+                  fontSize: 4.sp,
+                  textPadding: EdgeInsets.symmetric(horizontal: 3.sp, vertical: 1.sp),
+                )
               ],
             )
           else
@@ -97,10 +111,10 @@ class _NavItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 8.w),
       child: Text(
         title,
-        style: GoogleFonts.poppins(
-          fontSize: isTablet ? 7.sp : 6.sp,
+        style: GoogleFonts.interTight(
+          fontSize: isTablet ? 6.sp : 5.sp,
           fontWeight: FontWeight.w500,
-          color: MyColors.textColor,
+          color: Colors.black,
         ),
       ),
     );

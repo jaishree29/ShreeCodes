@@ -48,9 +48,12 @@ class _SplashScreenState extends State<SplashScreen> {
               opacity: _visible ? 1.0 : 0.0,
               child: Text(
                 "ShreeCodes",
-                style: GoogleFonts.poppins(
+                style: GoogleFonts.interTight(
+                  foreground: Paint()
+                    ..shader = MyColors.linerGradient.createShader(
+                      Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
+                    ),
                   fontSize: isMobile ? 28.sp : 24.sp,
-                  color: MyColors.primaryColor,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 1.5,
                 ),
