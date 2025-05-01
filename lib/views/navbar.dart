@@ -17,8 +17,8 @@ class Navbar extends StatelessWidget {
     return Container(
       padding: isMobile
           ? EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h)
-          : EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
-      color: Colors.white,
+          : EdgeInsets.symmetric(horizontal: 8.w, vertical: 20.h),
+      color: MyColors.navbarColor,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -36,7 +36,7 @@ class Navbar extends StatelessWidget {
                           : BorderRadius.circular(11.r),
                 ),
                 child: Text(
-                  'SC',
+                  'JT',
                   style: GoogleFonts.interTight(
                     fontSize: isMobile
                         ? 12.sp
@@ -51,10 +51,9 @@ class Navbar extends StatelessWidget {
               if (!ResponsiveBuilder.isMobile(context)) ...[
                 SizedBox(width: 4.w),
                 Text(
-                  'ShreeCodes',
+                  'Jaishree Tiwari',
                   style: GoogleFonts.interTight(
-                    fontSize:
-                        isTablet ? 10.sp : 7.sp,
+                    fontSize: isTablet ? 10.sp : 7.sp,
                     // foreground: Paint()
                     //   ..shader = MyColors.linerGradient.createShader(
                     //     Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
@@ -77,12 +76,18 @@ class Navbar extends StatelessWidget {
                 _NavItem(title: 'Contact'),
                 SizedBox(width: 5.w),
                 MyElevatedButton(
-                  padding: EdgeInsets.symmetric(horizontal: 3.sp, vertical: 1.sp),
-                  borderRadius: 2.sp,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 3.sp,
+                    vertical: 2.5.sp,
+                  ),
+                  borderRadius: 20.sp,
                   text: 'Let\'s Talk',
                   onPressed: () {},
                   fontSize: 4.sp,
-                  textPadding: EdgeInsets.symmetric(horizontal: 3.sp, vertical: 1.sp),
+                  textPadding: EdgeInsets.symmetric(
+                    horizontal: 3.sp,
+                    vertical: 2.5.sp,
+                  ),
                 )
               ],
             )

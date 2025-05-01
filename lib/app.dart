@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/views/splash_screen.dart';
 
 class MyApp extends StatefulWidget {
@@ -25,7 +26,7 @@ class _MyAppState extends State<MyApp> {
             debugShowCheckedModeBanner: false,
             title: 'ShreeCodes',
             theme: ThemeData(
-              scaffoldBackgroundColor: Colors.white,
+              scaffoldBackgroundColor: MyColors.scaffoldColor,
             ),
             home: child,
           );
