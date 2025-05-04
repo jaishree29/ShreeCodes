@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/responsive_builder.dart';
+import 'package:jaishree/views/about_section.dart';
 import 'package:jaishree/views/navbar.dart';
 import 'package:jaishree/widgets/elevated_button.dart';
 
@@ -26,7 +27,8 @@ class _HomePageState extends State<HomePage> {
           : null,
       body: SingleChildScrollView(
         controller: _scrollController,
-        physics: const BouncingScrollPhysics(),
+        physics: BouncingScrollPhysics(
+            decelerationRate: ScrollDecelerationRate.fast),
         child: Column(
           children: [
             Navbar(scaffoldKey: _scaffoldKey),
@@ -132,7 +134,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ],
-            )
+            ),
+            SizedBox(
+              height: 35.sp,
+            ),
+            AboutSection(),
+            
           ],
         ),
       ),
