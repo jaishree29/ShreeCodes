@@ -17,87 +17,54 @@ class Navbar extends StatelessWidget {
     return Container(
       padding: isMobile
           ? EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h)
-          : EdgeInsets.symmetric(horizontal: 8.w, vertical: 20.h),
-      color: MyColors.navbarColor,
+          : EdgeInsets.symmetric(horizontal: 8.w, vertical: 30.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          /// LOGO
-          Row(
-            children: [
-              Container(
-                padding: isMobile ? EdgeInsets.all(8.sp) : EdgeInsets.all(3.sp),
-                decoration: BoxDecoration(
-                  gradient: MyColors.linerGradient,
-                  borderRadius: isMobile
-                      ? BorderRadius.circular(6.sp)
-                      : isTablet
-                          ? BorderRadius.circular(7.r)
-                          : BorderRadius.circular(11.r),
-                ),
-                child: Text(
-                  'JT',
-                  style: GoogleFonts.interTight(
-                    fontSize: isMobile
-                        ? 12.sp
-                        : isTablet
-                            ? 8.sp
-                            : 6.sp,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              if (!ResponsiveBuilder.isMobile(context)) ...[
-                SizedBox(width: 4.w),
-                Text(
-                  'Jaishree Tiwari',
-                  style: GoogleFonts.interTight(
-                    fontSize: isTablet ? 10.sp : 7.sp,
-                    // foreground: Paint()
-                    //   ..shader = MyColors.linerGradient.createShader(
-                    //     Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
-                    //   ),
-                    fontWeight: FontWeight.w600,
-                    color: MyColors.primaryColor,
-                  ),
-                ),
-              ],
-            ],
+          Text(
+            'ShreeCodes',
+            style: GoogleFonts.inter(
+              fontSize: isTablet ? 8.sp : 6.sp,
+              fontWeight: FontWeight.w600,
+              color: MyColors.black,
+            ),
           ),
-
-          /// NAV LINKS (Only for tablet/desktop)
           if (!ResponsiveBuilder.isMobile(context))
             Row(
               children: [
-                _NavItem(title: 'Home'),
                 _NavItem(title: 'About'),
+                _NavItem(title: 'Skills'),
                 _NavItem(title: 'Projects'),
                 _NavItem(title: 'Contact'),
-                SizedBox(width: 5.w),
-                MyElevatedButton(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 3.sp,
-                    vertical: 2.5.sp,
-                  ),
-                  borderRadius: 20.sp,
-                  text: 'Let\'s Talk',
-                  onPressed: () {},
-                  fontSize: 4.sp,
-                  textPadding: EdgeInsets.symmetric(
-                    horizontal: 3.sp,
-                    vertical: 2.5.sp,
-                  ),
-                )
               ],
-            )
-          else
-            IconButton(
-              icon: Icon(Icons.menu, color: MyColors.primaryColor, size: 24.sp),
-              onPressed: () {
-                scaffoldKey.currentState?.openDrawer();
-              },
             ),
+          // else
+          //   IconButton(
+          //     icon: Icon(Icons.menu, color: MyColors.primaryColor, size: 24.sp),
+          //     onPressed: () {
+          //       scaffoldKey.currentState?.openDrawer();
+          //     },
+          //   ),
+          MyElevatedButton(
+            backgroundColor: Colors.transparent,
+            borderSide: BorderSide(
+              color: MyColors.textColor2,
+              width: 0.3.sp,
+            ),
+            padding: EdgeInsets.symmetric(
+              horizontal: 3.sp,
+              vertical: 2.5.sp,
+            ),
+            borderRadius: 20.sp,
+            text: 'Resume',
+            textColor: MyColors.black,
+            onPressed: () {},
+            fontSize: 4.sp,
+            textPadding: EdgeInsets.symmetric(
+              horizontal: 3.sp,
+              vertical: 2.5.sp,
+            ),
+          ),
         ],
       ),
     );
@@ -113,13 +80,13 @@ class _NavItem extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isTablet = ResponsiveBuilder.isTablet(context);
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.w),
+      padding: EdgeInsets.symmetric(horizontal: 5.5.w),
       child: Text(
         title,
-        style: GoogleFonts.interTight(
-          fontSize: isTablet ? 6.sp : 5.sp,
-          fontWeight: FontWeight.w500,
-          color: Colors.black,
+        style: GoogleFonts.inter(
+          fontSize: isTablet ? 6.sp : 4.3.sp,
+          fontWeight: FontWeight.w400,
+          color: MyColors.textColor1,
         ),
       ),
     );

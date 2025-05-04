@@ -13,6 +13,12 @@ class MyColors {
   static const Color infoColor = Color(0xFF2196F3);
   static const Color scaffoldColor = Color(0xffFAFBFC);
   static const Color navbarColor = Color(0xffFEFEFE);
+  static const Color textColor1 = Color(0xff4B5563);
+  static const Color textColor2 = Color.fromARGB(255, 232, 232, 232);
+  static const Color textColor3 = Color(0xffE5E5E5);
+  static const Color buttonSplash1 = Color.fromARGB(255, 157, 157, 157);
+  static const Color buttonSplash2 = Color.fromARGB(255, 82, 82, 82);
+  static const Color black = Color.fromARGB(255, 0, 0, 0);
 
   //Gradient Colors
   static const Gradient linerGradient = LinearGradient(

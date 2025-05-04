@@ -1,11 +1,10 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
-import 'package:jaishree/utils/image_strings.dart';
 import 'package:jaishree/utils/responsive_builder.dart';
 import 'package:jaishree/views/navbar.dart';
+import 'package:jaishree/widgets/elevated_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,125 +30,41 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Navbar(scaffoldKey: _scaffoldKey),
-            Divider(
-              color: Colors.grey.shade200,
-            ),
-            SizedBox(
-              height: 20.sp,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.sp),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            SizedBox(height: 35.sp),
+            Baseline(
+              baseline: 17.sp, // This should match the font size
+              baselineType: TextBaseline.alphabetic,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Text(
+                    'Hello, I\'m ',
+                    style: GoogleFonts.inter(
+                      fontSize: 17.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Stack(
+                    clipBehavior: Clip.none,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                width: 50.0,
-                                height: 1.sp,
-                                decoration: BoxDecoration(
-                                  gradient: MyColors.linerGradient,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 5.sp,
-                              ),
-                              Text(
-                                'Welcome to my portfolio',
-                                style: GoogleFonts.interTight(
-                                  fontSize: 5.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: MyColors.textColor,
-                                ),
-                              ),
-                            ],
+                      Positioned(
+                        bottom: 0,
+                        child: Transform.translate(
+                          offset: Offset(0, -5.5.sp),
+                          child: Container(
+                            width: 124.sp,
+                            height: 1.5.sp,
+                            color: MyColors.textColor3,
                           ),
-                          SizedBox(
-                            height: 8.sp,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'I am a',
-                                style: GoogleFonts.interTight(
-                                  fontSize: 20.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              // SizedBox(
-                              //   height: 1.sp,
-                              // ),
-                              AnimatedTextKit(
-                                repeatForever: true,
-                                pause: const Duration(milliseconds: 1000),
-                                animatedTexts: [
-                                  TypewriterAnimatedText(
-                                    cursor: '|',
-                                    'Flutter Developer',
-                                    textStyle: GoogleFonts.interTight(
-                                      fontSize: 20.sp,
-                                      fontWeight: FontWeight.w700,
-                                      color: MyColors.primaryColor,
-                                    ),
-                                    speed: const Duration(milliseconds: 80),
-                                  ),
-                                  TypewriterAnimatedText(
-                                    cursor: '|',
-                                    'Full-Stack Developer',
-                                    textStyle: GoogleFonts.interTight(
-                                      fontSize: 20.sp,
-                                      fontWeight: FontWeight.w700,
-                                      color: MyColors.primaryColor,
-                                    ),
-                                    speed: const Duration(milliseconds: 80),
-                                  ),
-                                  TypewriterAnimatedText(
-                                    cursor: '|',
-                                    'Tech Enthusiast',
-                                    textStyle: GoogleFonts.interTight(
-                                      fontSize: 20.sp,
-                                      fontWeight: FontWeight.w700,
-                                      color: MyColors.primaryColor,
-                                    ),
-                                    speed: const Duration(milliseconds: 80),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 2.sp,
-                          ),
-                          SizedBox(
-                            width: 200.sp,
-                            child: Text(
-                              'Full-stack developer specializing in building exceptional digital experiences. Transforming ideas into elegant solutions through clean code and intuitive design.',
-                              style: GoogleFonts.dmSans(
-                                fontSize: 5.5.sp,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black.withOpacity(0.6),
-                              ),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
-                      Container(
-                        width: 130.sp,
-                        height: 130.sp,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: NetworkImage(MyImages.profileImage),
-                            fit: BoxFit.cover,
-                          ),
-                          shape: BoxShape.circle,
+                      Text(
+                        'Jaishree Tiwari',
+                        style: GoogleFonts.inter(
+                          fontSize: 17.sp,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ],
@@ -157,6 +72,67 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            SizedBox(
+              height: 5.sp,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 70.sp),
+              child: Text(
+                'Flutter Developer crafting beautiful, performant mobile experiences with clean code and thoughtful design.',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.inter(
+                    fontSize: 6.sp,
+                    color: MyColors.textColor1,
+                    fontWeight: FontWeight.w400),
+              ),
+            ),
+            SizedBox(
+              height: 15.sp,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                MyElevatedButton(
+                  backgroundColor: MyColors.black,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 3.sp,
+                    vertical: 2.5.sp,
+                  ),
+                  borderRadius: 20.sp,
+                  surfaceTintColor: const Color.fromARGB(255, 255, 255, 255),
+                  text: 'Get in touch',
+                  onPressed: () {},
+                  fontSize: 4.sp,
+                  textPadding: EdgeInsets.symmetric(
+                    horizontal: 3.sp,
+                    vertical: 2.5.sp,
+                  ),
+                ),
+                SizedBox(
+                  width: 5.sp,
+                ),
+                MyElevatedButton(
+                  backgroundColor: Colors.transparent,
+                  borderSide: BorderSide(
+                    color: MyColors.textColor2,
+                    width: 0.3.sp,
+                  ),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 3.sp,
+                    vertical: 2.5.sp,
+                  ),
+                  borderRadius: 20.sp,
+                  text: 'View Projects',
+                  textColor: MyColors.black,
+                  onPressed: () {},
+                  fontSize: 4.sp,
+                  textPadding: EdgeInsets.symmetric(
+                    horizontal: 3.sp,
+                    vertical: 2.5.sp,
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),

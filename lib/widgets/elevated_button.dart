@@ -16,6 +16,7 @@ class MyElevatedButton extends StatelessWidget {
     required this.textPadding,
     this.borderSide = BorderSide.none,
     required this.fontSize,
+    this.surfaceTintColor = MyColors.buttonSplash1,
   });
 
   final String text;
@@ -29,6 +30,7 @@ class MyElevatedButton extends StatelessWidget {
   final EdgeInsets textPadding;
   final BorderSide borderSide;
   final double fontSize;
+  final Color surfaceTintColor;
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +40,8 @@ class MyElevatedButton extends StatelessWidget {
         shadowColor: Colors.transparent,
         foregroundColor: foregroundColor,
         backgroundColor: backgroundColor,
-        overlayColor: Colors.transparent,
-        surfaceTintColor: MyColors.secondaryColor,
+        overlayColor: surfaceTintColor,
+        surfaceTintColor: surfaceTintColor,
         elevation: elevation,
         shape: RoundedRectangleBorder(
           side: borderSide,
