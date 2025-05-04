@@ -13,6 +13,7 @@ class MyColors {
   static const Color infoColor = Color(0xFF2196F3);
   static const Color scaffoldColor = Color(0xffFAFBFC);
   static const Color navbarColor = Color(0xffFEFEFE);
+  static const Color scaffoldColor1 = Color.fromARGB(255, 248, 247, 247);
   static const Color textColor1 = Color(0xff4B5563);
   static const Color textColor2 = Color.fromARGB(255, 232, 232, 232);
   static const Color textColor3 = Color(0xffE5E5E5);

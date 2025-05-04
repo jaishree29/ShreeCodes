@@ -5,6 +5,7 @@ import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/responsive_builder.dart';
 import 'package:jaishree/views/about_section.dart';
 import 'package:jaishree/views/navbar.dart';
+import 'package:jaishree/views/skills_section.dart';
 import 'package:jaishree/widgets/elevated_button.dart';
 
 class HomePage extends StatefulWidget {
@@ -139,7 +140,14 @@ class _HomePageState extends State<HomePage> {
               height: 35.sp,
             ),
             AboutSection(),
-            
+            Container(
+              width: MediaQuery.of(context).size.width * 1,
+              decoration: BoxDecoration(
+                color: MyColors.scaffoldColor1,
+                // borderRadius: BorderRadius.circular(10.sp),
+              ),
+              child: SkillsSection(),
+            ),
           ],
         ),
       ),
