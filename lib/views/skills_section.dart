@@ -21,9 +21,9 @@ class _SkillsSectionState extends State<SkillsSection> {
     {'icon': MyImages.firebaseIcon, 'text': 'Firebase'},
     {'icon': MyImages.gitIcon, 'text': 'Git'},
     {'icon': MyImages.androidIcon, 'text': 'Android'},
-    {'icon': MyImages.iosIcon, 'text': 'iOS'},
+    {'icon': MyImages.goIcon, 'text': 'Golang'},
     {'icon': MyImages.cppIcon, 'text': 'C++'},
-    {'icon': MyImages.mySqlIcon, 'text': 'SQL'},
+    {'icon': MyImages.javaIcon, 'text': 'Java'},
   ];
 
   final List<Map<String, String>> designSkills = [
@@ -31,10 +31,10 @@ class _SkillsSectionState extends State<SkillsSection> {
     {'icon': MyImages.prototypingIcon, 'text': 'Prototyping'},
     {'icon': MyImages.wireframingIcon, 'text': 'Wireframing'},
     {'icon': MyImages.uiuxIcon, 'text': 'UI/UX Design'},
-    {'icon': MyImages.userResearchIcon, 'text': 'User Research'},
-    {'icon': MyImages.usabilityTestingIcon, 'text': 'Usability Testing'},
-    {'icon': MyImages.responsiveDesignIcon, 'text': 'Responsive Design'},
-    {'icon': MyImages.animationIcon, 'text': 'Animation'},
+    // {'icon': MyImages.userResearchIcon, 'text': 'User Research'},
+    // {'icon': MyImages.usabilityTestingIcon, 'text': 'Usability Testing'},
+    // {'icon': MyImages.responsiveDesignIcon, 'text': 'Responsive Design'},
+    // {'icon': MyImages.animationIcon, 'text': 'Animation'},
   ];
 
   final List<Map<String, String>> tools = [
@@ -42,7 +42,7 @@ class _SkillsSectionState extends State<SkillsSection> {
     {'icon': MyImages.androidStudioIcon, 'text': 'Android Studio'},
     {'icon': MyImages.postmanIcon, 'text': 'Postman'},
     {'icon': MyImages.githubIcon, 'text': 'GitHub'},
-    {'icon': MyImages.jiraIcon, 'text': 'Jira'},
+    {'icon': MyImages.miroIcon, 'text': 'Miro'},
     {'icon': MyImages.slackIcon, 'text': 'Slack'},
     {'icon': MyImages.trelloIcon, 'text': 'Trello'},
     {'icon': MyImages.notionIcon, 'text': 'Notion'},
