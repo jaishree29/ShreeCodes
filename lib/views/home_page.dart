@@ -143,11 +143,12 @@ class _HomePageState extends State<HomePage> {
             Container(
               width: MediaQuery.of(context).size.width * 1,
               decoration: BoxDecoration(
-                color: MyColors.scaffoldColor1,
+                color: MyColors.bgColor,
                 // borderRadius: BorderRadius.circular(10.sp),
               ),
               child: SkillsSection(),
             ),
+            
           ],
         ),
       ),

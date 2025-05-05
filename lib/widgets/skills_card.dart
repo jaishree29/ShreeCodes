@@ -71,8 +71,13 @@ class _SkillsCardState extends State<SkillsCard> {
                 child: Padding(
                   padding: EdgeInsets.all(2.sp),
                   child: Image.network(
+                    errorBuilder: (context, error, stackTrace) {
+                      return Icon(Icons.error); 
+                    },
                     widget.icon,
                     height: 10.sp,
+                    width: 10.sp,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ),
