@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:jaishree/utils/colors.dart';
+import 'package:jaishree/utils/url_launcher.dart';
+import 'package:jaishree/utils/urls.dart';
 import 'package:jaishree/widgets/elevated_button.dart';
 
 class GetInTouch extends StatelessWidget {
@@ -39,7 +41,10 @@ class GetInTouch extends StatelessWidget {
           children: [
             MyElevatedButton(
               text: 'Email me',
-              onPressed: () {},
+              onPressed: ()  => UrlLauncherHelper.launchInNewTab(
+                MyUrls.email,
+                context: context,
+              ),
               borderRadius: 10.sp,
               padding: EdgeInsets.symmetric(horizontal: 3.sp, vertical: 2.5.sp),
               textPadding:
@@ -52,7 +57,10 @@ class GetInTouch extends StatelessWidget {
             SizedBox(width: 5.sp),
             MyElevatedButton(
               text: 'Connect on LinkedIn',
-              onPressed: () {},
+              onPressed: () => UrlLauncherHelper.launchInNewTab(
+                MyUrls.linkedin,
+                context: context,
+              ),
               borderSide: BorderSide(
                 color: MyColors.textColor2,
                 width: 0.3.sp,

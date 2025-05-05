@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/image_strings.dart';
+import 'package:jaishree/utils/url_launcher.dart';
+import 'package:jaishree/utils/urls.dart';
 
 class AboutSection extends StatefulWidget {
   const AboutSection({super.key});
@@ -75,7 +77,8 @@ class _AboutSectionState extends State<AboutSection> {
                   children: [
                     IconButton(
                       splashColor: MyColors.buttonSplash1,
-                      onPressed: () {},
+                      onPressed: () =>
+                          UrlLauncherHelper.launchInNewTab(MyUrls.github),
                       icon: HugeIcon(
                         icon: HugeIcons.strokeRoundedGithub,
                         size: 5.sp,
@@ -87,7 +90,8 @@ class _AboutSectionState extends State<AboutSection> {
                     ),
                     IconButton(
                       splashColor: MyColors.buttonSplash1,
-                      onPressed: () {},
+                      onPressed: () =>
+                          UrlLauncherHelper.launchInNewTab(MyUrls.linkedin),
                       icon: HugeIcon(
                         icon: HugeIcons.strokeRoundedLinkedin02,
                         size: 5.sp,
@@ -99,7 +103,8 @@ class _AboutSectionState extends State<AboutSection> {
                     ),
                     IconButton(
                       splashColor: MyColors.buttonSplash1,
-                      onPressed: () {},
+                      onPressed: () =>
+                          UrlLauncherHelper.launchInNewTab(MyUrls.twitter),
                       icon: HugeIcon(
                         icon: HugeIcons.strokeRoundedTwitter,
                         size: 5.sp,

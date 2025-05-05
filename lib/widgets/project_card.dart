@@ -3,12 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:jaishree/utils/colors.dart';
+import 'package:jaishree/utils/url_launcher.dart';
 
 class ProjectCard extends StatefulWidget {
   final String imageUrl;
   final String title;
   final String description;
   final List<String> technologies;
+  final String url;
 
   const ProjectCard({
     super.key,
@@ -16,6 +18,7 @@ class ProjectCard extends StatefulWidget {
     required this.title,
     required this.description,
     required this.technologies,
+    required this.url,
   });
 
   @override
@@ -49,6 +52,12 @@ class _ProjectCardState extends State<ProjectCard> {
                   )
                 ]
               : [
+                  BoxShadow(
+                    color: MyColors.textColor3.withOpacity(0.2),
+                    blurRadius: 0.2.sp,
+                    spreadRadius: 0.5.sp,
+                    offset: Offset(0, 0.5.sp),
+                  ),
                   BoxShadow(
                     color: MyColors.textColor3.withOpacity(0.2),
                     blurRadius: 0.2.sp,
@@ -110,18 +119,21 @@ class _ProjectCardState extends State<ProjectCard> {
                               setState(() => _isArrowHovered = true),
                           onExit: (event) =>
                               setState(() => _isArrowHovered = false),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: _isArrowHovered
-                                  ? MyColors.tabBg
-                                  : Colors.transparent,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(2.sp),
-                              child: Icon(
-                                HugeIcons.strokeRoundedArrowUpRight01,
-                                size: 5.sp,
+                          child: GestureDetector(
+                            onTap: () => UrlLauncherHelper.launchInNewTab(widget.url),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: _isArrowHovered
+                                    ? MyColors.tabBg
+                                    : Colors.transparent,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(2.sp),
+                                child: Icon(
+                                  HugeIcons.strokeRoundedArrowUpRight01,
+                                  size: 5.sp,
+                                ),
                               ),
                             ),
                           ),

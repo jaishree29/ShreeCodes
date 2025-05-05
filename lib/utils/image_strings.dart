@@ -40,4 +40,8 @@ class MyImages {
   static const String trelloIcon = 'assets/logos/Trello-Emblem.png';
   static const String notionIcon =
       'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/2048px-Notion-logo.svg.png';
+
+  // Projects images
+  static const String thatGirlImage = 'assets/images/ThatGirl.png';
+  static const String resumeBuilderImage = 'assets/images/ResumeBuilder.png';
 }

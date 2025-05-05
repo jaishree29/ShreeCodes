@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
+import 'package:jaishree/utils/image_strings.dart';
 import 'package:jaishree/widgets/project_card.dart';
 
 class ProjectsSection extends StatefulWidget {
@@ -14,32 +15,20 @@ class ProjectsSection extends StatefulWidget {
 class _ProjectsSectionState extends State<ProjectsSection> {
   final List<Map<String, dynamic>> projects = [
     {
-      'imageUrl': '',
+      'imageUrl': MyImages.thatGirlImage,
       'title': 'E-Commerce App',
       'description':
-          'A complete e-commerce solution with product listing, cart, and payment integration.',
-      'technologies': ['Flutter', 'Firebase', 'Node.js'],
+          'ThatGirl: A complete e-commerce solution with product listing, cart, and payment integration.',
+      'technologies': ['Flutter', 'Firebase', 'Laravel'],
+      'url': 'https://github.com/jaishree29/thatGirlApp',
     },
     {
-      'imageUrl': '',
-      'title': 'Fitness Tracker',
+      'imageUrl': MyImages.resumeBuilderImage,
+      'title': 'ProFile',
       'description':
-          'Mobile application for tracking workouts and nutrition with progress analytics.',
-      'technologies': ['Flutter', 'BLoC', 'SQLite'],
-    },
-    {
-      'imageUrl': '',
-      'title': 'E-Commerce App',
-      'description':
-          'A complete e-commerce solution with product listing, cart, and payment integration.',
-      'technologies': ['Flutter', 'Firebase', 'Node.js'],
-    },
-    {
-      'imageUrl': '',
-      'title': 'Fitness Tracker',
-      'description':
-          'Mobile application for tracking workouts and nutrition with progress analytics.',
-      'technologies': ['Flutter', 'BLoC', 'SQLite'],
+          'An application for creating and managing resumes with various templates.',
+      'technologies': ['Flutter', 'Provider', 'Firebase'],
+      'url': 'https://github.com/jaishree29/resume-builder',
     },
   ];
 
@@ -87,6 +76,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               title: projects[index]['title'],
               description: projects[index]['description'],
               technologies: List<String>.from(projects[index]['technologies']),
+              url: projects[index]['url'],
             ),
           ),
         ),

@@ -22,12 +22,34 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final ScrollController _scrollController = ScrollController();
 
+  final GlobalKey _aboutKey = GlobalKey();
+  final GlobalKey _skillsKey = GlobalKey();
+  final GlobalKey _projectsKey = GlobalKey();
+  final GlobalKey _contactKey = GlobalKey();
+
+  void _scrollToSection(GlobalKey key) {
+    final context = key.currentContext;
+    if (context != null) {
+      Scrollable.ensureVisible(
+        context,
+        duration: const Duration(milliseconds: 800),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
       drawer: ResponsiveBuilder.isMobile(context)
-          ? buildMobileDrawer(context)
+          ? buildMobileDrawer(
+              context,
+              scrollToAbout: () => _scrollToSection(_aboutKey),
+              scrollToSkills: () => _scrollToSection(_skillsKey),
+              scrollToProjects: () => _scrollToSection(_projectsKey),
+              scrollToContact: () => _scrollToSection(_contactKey),
+            )
           : null,
       body: SingleChildScrollView(
         controller: _scrollController,
@@ -35,7 +57,13 @@ class _HomePageState extends State<HomePage> {
             decelerationRate: ScrollDecelerationRate.fast),
         child: Column(
           children: [
-            Navbar(scaffoldKey: _scaffoldKey),
+            Navbar(
+              scaffoldKey: _scaffoldKey,
+              scrollToAbout: () => _scrollToSection(_aboutKey),
+              scrollToSkills: () => _scrollToSection(_skillsKey),
+              scrollToProjects: () => _scrollToSection(_projectsKey),
+              scrollToContact: () => _scrollToSection(_contactKey),
+            ),
             SizedBox(height: 35.sp),
             Baseline(
               baseline: 17.sp, // This should match the font size
@@ -107,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                   borderRadius: 20.sp,
                   surfaceTintColor: const Color.fromARGB(255, 255, 255, 255),
                   text: 'Get in touch',
-                  onPressed: () {},
+                  onPressed: () => _scrollToSection(_contactKey),
                   fontSize: 4.sp,
                   textPadding: EdgeInsets.symmetric(
                     horizontal: 3.sp,
@@ -130,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                   borderRadius: 20.sp,
                   text: 'View Projects',
                   textColor: MyColors.black,
-                  onPressed: () {},
+                  onPressed: () => _scrollToSection(_projectsKey),
                   fontSize: 4.sp,
                   textPadding: EdgeInsets.symmetric(
                     horizontal: 3.sp,
@@ -142,19 +170,25 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 35.sp,
             ),
-            AboutSection(),
+            AboutSection(
+              key: _aboutKey,
+            ),
             Container(
               width: MediaQuery.of(context).size.width * 1,
               decoration: BoxDecoration(
                 color: MyColors.bgColor,
                 // borderRadius: BorderRadius.circular(10.sp),
               ),
-              child: SkillsSection(),
+              child: SkillsSection(
+                key: _skillsKey,
+              ),
             ),
             SizedBox(
               height: 35.sp,
             ),
-            ProjectsSection(),
+            ProjectsSection(
+              key: _projectsKey,
+            ),
             SizedBox(
               height: 40.sp,
             ),
@@ -164,7 +198,9 @@ class _HomePageState extends State<HomePage> {
                 color: MyColors.bgColor,
                 // borderRadius: BorderRadius.circular(10.sp),
               ),
-              child: GetInTouch(),
+              child: GetInTouch(
+                key: _contactKey,
+              ),
             ),
             Footer(),
           ],
