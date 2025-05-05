@@ -4,10 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/responsive_builder.dart';
 import 'package:jaishree/views/about_section.dart';
+import 'package:jaishree/views/get_in_touch.dart';
 import 'package:jaishree/views/navbar.dart';
 import 'package:jaishree/views/projects_section.dart';
 import 'package:jaishree/views/skills_section.dart';
 import 'package:jaishree/widgets/elevated_button.dart';
+import 'package:jaishree/widgets/footer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -153,6 +155,18 @@ class _HomePageState extends State<HomePage> {
               height: 35.sp,
             ),
             ProjectsSection(),
+            SizedBox(
+              height: 40.sp,
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width * 1,
+              decoration: BoxDecoration(
+                color: MyColors.bgColor,
+                // borderRadius: BorderRadius.circular(10.sp),
+              ),
+              child: GetInTouch(),
+            ),
+            Footer(),
           ],
         ),
       ),

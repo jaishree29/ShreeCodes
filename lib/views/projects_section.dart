@@ -90,8 +90,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
             ),
           ),
         ),
-
-        SizedBox(height: 30.sp),
+        // SizedBox(height: 40.sp),
       ],
     );
   }

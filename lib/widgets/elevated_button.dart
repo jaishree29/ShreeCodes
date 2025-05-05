@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
 
@@ -7,7 +8,7 @@ class MyElevatedButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.backgroundColor = MyColors.primaryColor,
+    this.backgroundColor = MyColors.black,
     this.foregroundColor = Colors.white,
     this.textColor = Colors.white,
     required this.borderRadius,
@@ -17,6 +18,9 @@ class MyElevatedButton extends StatelessWidget {
     this.borderSide = BorderSide.none,
     required this.fontSize,
     this.surfaceTintColor = MyColors.buttonSplash1,
+    this.icon,
+    this.iconColor,
+    this.iconSize,
   });
 
   final String text;
@@ -31,6 +35,9 @@ class MyElevatedButton extends StatelessWidget {
   final BorderSide borderSide;
   final double fontSize;
   final Color surfaceTintColor;
+  final IconData? icon;
+  final Color? iconColor;
+  final double? iconSize;
 
   @override
   Widget build(BuildContext context) {
@@ -51,13 +58,26 @@ class MyElevatedButton extends StatelessWidget {
       ),
       child: Padding(
         padding: textPadding,
-        child: Text(
-          text,
-          style: GoogleFonts.poppins(
-            color: textColor,
-            fontSize: fontSize,
-            fontWeight: FontWeight.w500,
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            icon != null
+                ? Icon(
+                    icon,
+                    size: iconSize,
+                    color: iconColor,
+                  )
+                : const SizedBox.shrink(),
+            icon != null ? SizedBox(width: 2.sp) : const SizedBox.shrink(),
+            Text(
+              text,
+              style: GoogleFonts.poppins(
+                color: textColor,
+                fontSize: fontSize,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
         ),
       ),
     );

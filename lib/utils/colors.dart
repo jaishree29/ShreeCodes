@@ -19,6 +19,7 @@ class MyColors {
   static const Color textColor2 = Color.fromARGB(255, 232, 232, 232);
   static const Color textColor3 = Color(0xffE5E5E5);
   static const Color textColor4 = Color(0xff737373);
+  static const Color surfaceColor = Color.fromARGB(255, 255, 255, 255);
   static const Color bgColor = Color(0xffF9FAFB);
   static const Color buttonSplash1 = Color.fromARGB(255, 157, 157, 157);
   static const Color buttonSplash2 = Color.fromARGB(255, 82, 82, 82);
