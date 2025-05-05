@@ -5,6 +5,7 @@ import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/responsive_builder.dart';
 import 'package:jaishree/views/about_section.dart';
 import 'package:jaishree/views/navbar.dart';
+import 'package:jaishree/views/projects_section.dart';
 import 'package:jaishree/views/skills_section.dart';
 import 'package:jaishree/widgets/elevated_button.dart';
 
@@ -148,7 +149,10 @@ class _HomePageState extends State<HomePage> {
               ),
               child: SkillsSection(),
             ),
-            
+            SizedBox(
+              height: 35.sp,
+            ),
+            ProjectsSection(),
           ],
         ),
       ),

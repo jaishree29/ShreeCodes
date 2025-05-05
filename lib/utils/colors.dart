@@ -23,6 +23,7 @@ class MyColors {
   static const Color buttonSplash1 = Color.fromARGB(255, 157, 157, 157);
   static const Color buttonSplash2 = Color.fromARGB(255, 82, 82, 82);
   static const Color black = Color.fromARGB(255, 0, 0, 0);
+  static const Color border = Color.fromARGB(255, 219, 219, 219);
 
   //Gradient Colors
   static const Gradient linerGradient = LinearGradient(
