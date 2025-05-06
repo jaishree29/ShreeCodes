@@ -85,7 +85,7 @@ class Navbar extends StatelessWidget {
                   width: isMobile
                       ? 1.5.sp
                       : isTablet
-                          ? 1.sp
+                          ? 0.5.sp
                           : 0.3.sp,
                 ),
                 padding: EdgeInsets.symmetric(

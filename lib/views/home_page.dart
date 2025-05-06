@@ -125,7 +125,7 @@ class _HomePageState extends State<HomePage> {
                         Text(
                           'Hello, I\'m ',
                           style: GoogleFonts.inter(
-                            fontSize: isMobile ? 17.sp : 26.sp,
+                            fontSize: isTablet ? 26.sp : 17.sp,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -135,10 +135,10 @@ class _HomePageState extends State<HomePage> {
                             Positioned(
                               bottom: 0,
                               child: Transform.translate(
-                                offset: Offset(0, isMobile ? -5.5.sp : -7.5.sp),
+                                offset: Offset(0, isTablet ? -7.5.sp : -5.5.sp),
                                 child: Container(
-                                  width: isMobile ? 124.sp : 190.sp,
-                                  height: isMobile ? 1.5.sp : 2.5.sp,
+                                  width: isTablet ? 190.sp : 124.sp,
+                                  height: isTablet ? 2.5.sp : 1.5.sp,
                                   color: MyColors.textColor3,
                                 ),
                               ),
@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               'Jaishree Tiwari',
                               style: GoogleFonts.inter(
-                                fontSize: isMobile ? 17.sp : 26.sp,
+                                fontSize: isTablet ? 26.sp : 17.sp,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
