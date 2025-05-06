@@ -40,9 +40,14 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ResponsiveBuilder.isMobile(context);
+    bool isTablet = ResponsiveBuilder.isTablet(context);
+    // bool isDesktop = ResponsiveBuilder.isDesktop(context);
+    // bool isLargeDesktop = ResponsiveBuilder.isLargeDesktop(context);
+
     return Scaffold(
       key: _scaffoldKey,
-      drawer: ResponsiveBuilder.isMobile(context)
+      drawer: isMobile
           ? buildMobileDrawer(
               context,
               scrollToAbout: () => _scrollToSection(_aboutKey),
@@ -64,64 +69,125 @@ class _HomePageState extends State<HomePage> {
               scrollToProjects: () => _scrollToSection(_projectsKey),
               scrollToContact: () => _scrollToSection(_contactKey),
             ),
-            SizedBox(height: 35.sp),
+            isMobile
+                ? SizedBox(
+                    height: 100,
+                  )
+                : SizedBox(
+                    height: isTablet ? 120 : 35.sp,
+                  ),
             Baseline(
               baseline: 17.sp, // This should match the font size
               baselineType: TextBaseline.alphabetic,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                children: [
-                  Text(
-                    'Hello, I\'m ',
-                    style: GoogleFonts.inter(
-                      fontSize: 17.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      Positioned(
-                        bottom: 0,
-                        child: Transform.translate(
-                          offset: Offset(0, -5.5.sp),
-                          child: Container(
-                            width: 124.sp,
-                            height: 1.5.sp,
-                            color: MyColors.textColor3,
+              child: isMobile
+                  ? Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                        Text(
+                          'Hello, I\'m ',
+                          style: GoogleFonts.inter(
+                            fontSize: 33.sp,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
-                      ),
-                      Text(
-                        'Jaishree Tiwari',
-                        style: GoogleFonts.inter(
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.w500,
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Positioned(
+                              bottom: 0,
+                              child: Transform.translate(
+                                offset: Offset(0, -9.5.sp),
+                                child: Container(
+                                  width: 247.sp,
+                                  height: 3.5.sp,
+                                  color: MyColors.textColor3,
+                                ),
+                              ),
+                            ),
+                            Text(
+                              'Jaishree Tiwari',
+                              style: GoogleFonts.inter(
+                                fontSize: 33.sp,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                      ],
+                    )
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                        Text(
+                          'Hello, I\'m ',
+                          style: GoogleFonts.inter(
+                            fontSize: isMobile ? 17.sp : 26.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Positioned(
+                              bottom: 0,
+                              child: Transform.translate(
+                                offset: Offset(0, isMobile ? -5.5.sp : -7.5.sp),
+                                child: Container(
+                                  width: isMobile ? 124.sp : 190.sp,
+                                  height: isMobile ? 1.5.sp : 2.5.sp,
+                                  color: MyColors.textColor3,
+                                ),
+                              ),
+                            ),
+                            Text(
+                              'Jaishree Tiwari',
+                              style: GoogleFonts.inter(
+                                fontSize: isMobile ? 17.sp : 26.sp,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
             ),
             SizedBox(
-              height: 5.sp,
+              height: isMobile
+                  ? 20.sp
+                  : isTablet
+                      ? 10.sp
+                      : 5.sp,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 70.sp),
+              padding: EdgeInsets.symmetric(
+                  horizontal: isMobile
+                      ? 20.sp
+                      : isTablet
+                          ? 10.sp
+                          : 70.sp),
               child: Text(
                 'Flutter Developer crafting beautiful, performant mobile experiences with clean code and thoughtful design.',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.inter(
-                    fontSize: 6.sp,
+                    fontSize: isMobile
+                        ? 18.sp
+                        : isTablet
+                            ? 9.sp
+                            : 6.sp,
                     color: MyColors.textColor1,
                     fontWeight: FontWeight.w400),
               ),
             ),
             SizedBox(
-              height: 15.sp,
+              height: isMobile
+                  ? 50.sp
+                  : isTablet
+                      ? 10.sp
+                      : 15.sp,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -129,37 +195,69 @@ class _HomePageState extends State<HomePage> {
                 MyElevatedButton(
                   backgroundColor: MyColors.black,
                   padding: EdgeInsets.symmetric(
-                    horizontal: 3.sp,
-                    vertical: 2.5.sp,
+                    horizontal: isMobile
+                        ? 18.sp
+                        : isTablet
+                            ? 10.sp
+                            : 3.sp,
+                    vertical: isMobile
+                        ? 16.sp
+                        : isTablet
+                            ? 10.sp
+                            : 2.5.sp,
                   ),
                   borderRadius: 20.sp,
                   surfaceTintColor: const Color.fromARGB(255, 255, 255, 255),
                   text: 'Get in touch',
                   onPressed: () => _scrollToSection(_contactKey),
-                  fontSize: 4.sp,
+                  fontSize: isMobile
+                      ? 13.sp
+                      : isTablet
+                          ? 10.sp
+                          : 4.sp,
                   textPadding: EdgeInsets.symmetric(
                     horizontal: 3.sp,
                     vertical: 2.5.sp,
                   ),
                 ),
                 SizedBox(
-                  width: 5.sp,
+                  width: isMobile
+                      ? 16.sp
+                      : isTablet
+                          ? 10.sp
+                          : 5.sp,
                 ),
                 MyElevatedButton(
                   backgroundColor: Colors.transparent,
                   borderSide: BorderSide(
                     color: MyColors.textColor2,
-                    width: 0.3.sp,
+                    width: isMobile
+                        ? 1.5.sp
+                        : isTablet
+                            ? 1.5.sp
+                            : 0.3.sp,
                   ),
                   padding: EdgeInsets.symmetric(
-                    horizontal: 3.sp,
-                    vertical: 2.5.sp,
+                    horizontal: isMobile
+                        ? 18.sp
+                        : isTablet
+                            ? 10.sp
+                            : 3.sp,
+                    vertical: isMobile
+                        ? 16.sp
+                        : isTablet
+                            ? 10.sp
+                            : 2.5.sp,
                   ),
                   borderRadius: 20.sp,
                   text: 'View Projects',
                   textColor: MyColors.black,
                   onPressed: () => _scrollToSection(_projectsKey),
-                  fontSize: 4.sp,
+                  fontSize: isMobile
+                      ? 13.sp
+                      : isTablet
+                          ? 10.sp
+                          : 4.sp,
                   textPadding: EdgeInsets.symmetric(
                     horizontal: 3.sp,
                     vertical: 2.5.sp,
@@ -168,7 +266,11 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(
-              height: 35.sp,
+              height: isMobile
+                  ? 120.sp
+                  : isTablet
+                      ? 50.sp
+                      : 35.sp,
             ),
             AboutSection(
               key: _aboutKey,

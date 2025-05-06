@@ -29,20 +29,26 @@ class Navbar extends StatelessWidget {
     bool isTablet = ResponsiveBuilder.isTablet(context);
     return Container(
       padding: isMobile
-          ? EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h)
-          : EdgeInsets.symmetric(horizontal: 8.w, vertical: 30.h),
+          ? EdgeInsets.symmetric(horizontal: 18.w, vertical: 24.h)
+          : isTablet
+              ? EdgeInsets.symmetric(horizontal: 8.w, vertical: 15.h)
+              : EdgeInsets.symmetric(horizontal: 8.w, vertical: 30.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             'ShreeCodes',
             style: GoogleFonts.inter(
-              fontSize: isTablet ? 8.sp : 6.sp,
+              fontSize: isMobile
+                  ? 18.sp
+                  : isTablet
+                      ? 8.sp
+                      : 6.sp,
               fontWeight: FontWeight.w600,
               color: MyColors.black,
             ),
           ),
-          if (!ResponsiveBuilder.isMobile(context))
+          if (!isMobile)
             Row(
               children: [
                 _NavItem(
@@ -70,25 +76,51 @@ class Navbar extends StatelessWidget {
           //       scaffoldKey.currentState?.openDrawer();
           //     },
           //   ),
-          MyElevatedButton(
-            backgroundColor: Colors.transparent,
-            borderSide: BorderSide(
-              color: MyColors.textColor2,
-              width: 0.3.sp,
-            ),
-            padding: EdgeInsets.symmetric(
-              horizontal: 3.sp,
-              vertical: 2.5.sp,
-            ),
-            borderRadius: 20.sp,
-            text: 'Resume',
-            textColor: MyColors.black,
-            onPressed: () => UrlLauncherHelper.launchInNewTab(MyUrls.resume),
-            fontSize: 4.sp,
-            textPadding: EdgeInsets.symmetric(
-              horizontal: 3.sp,
-              vertical: 2.5.sp,
-            ),
+          Row(
+            children: [
+              MyElevatedButton(
+                backgroundColor: Colors.transparent,
+                borderSide: BorderSide(
+                  color: MyColors.textColor2,
+                  width: isMobile
+                      ? 1.5.sp
+                      : isTablet
+                          ? 1.sp
+                          : 0.3.sp,
+                ),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 3.sp,
+                  vertical: 2.5.sp,
+                ),
+                borderRadius: 20.sp,
+                text: 'Resume',
+                textColor: MyColors.black,
+                onPressed: () =>
+                    UrlLauncherHelper.launchInNewTab(MyUrls.resume),
+                fontSize: isMobile ? 12.5.sp : isTablet ? 5.5.sp : 4.sp,
+                textPadding: EdgeInsets.symmetric(
+                  horizontal: isMobile
+                      ? 10.sp
+                      : isTablet
+                          ? 5.sp
+                          : 3.sp,
+                  vertical: isMobile
+                      ? 10.sp
+                      : isTablet
+                          ? 5.sp
+                          : 2.5.sp,
+                ),
+              ),
+              // isMobile ? SizedBox(width: 3.sp) : SizedBox.shrink(),
+              // if (isMobile)
+              //   IconButton(
+              //     icon: Icon(Icons.menu,
+              //         color: MyColors.primaryColor, size: 24.sp),
+              //     onPressed: () {
+              //       scaffoldKey.currentState?.openDrawer();
+              //     },
+              //   ),
+            ],
           ),
         ],
       ),

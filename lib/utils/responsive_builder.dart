@@ -6,7 +6,6 @@ class ResponsiveBuilder {
   static const double tabletMaxWidth = 1024;
   static const double desktopMaxWidth = 1440;
 
-  /// Get screen width using ScreenUtil
   static double _screenWidth() => ScreenUtil().screenWidth;
 
   static bool isMobile(BuildContext context) {
