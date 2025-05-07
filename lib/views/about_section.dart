@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/image_strings.dart';
@@ -50,8 +49,9 @@ class _AboutSectionState extends State<AboutSection> {
                     children: [
                       Text(
                         'About Me',
-                        style: GoogleFonts.inter(
-                          fontSize: 26.sp,
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 28.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -60,7 +60,8 @@ class _AboutSectionState extends State<AboutSection> {
                       ),
                       Text(
                         'I\'m a Flutter developer with a passion for creating elegant, user-centered mobile applications. With a background in both design and development, I bring a holistic approach to every project.',
-                        style: GoogleFonts.inter(
+                        style: TextStyle(
+                          fontFamily: 'Inter',
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w400,
                           color: MyColors.textColor1,
@@ -71,7 +72,8 @@ class _AboutSectionState extends State<AboutSection> {
                       ),
                       Text(
                         'My journey in mobile development began 5 years ago, and I\'ve since worked with startups and established companies to deliver apps that users love. I believe in clean code, thoughtful architecture, and pixel-perfect implementation.',
-                        style: GoogleFonts.inter(
+                        style: TextStyle(
+                          fontFamily: 'Inter',
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w400,
                           color: MyColors.textColor1,
@@ -152,7 +154,8 @@ class _AboutSectionState extends State<AboutSection> {
                     children: [
                       Text(
                         'About Me',
-                        style: GoogleFonts.inter(
+                        style: TextStyle(
+                          fontFamily: 'Inter',
                           fontSize: 9.sp,
                           fontWeight: FontWeight.w500,
                         ),
@@ -162,7 +165,8 @@ class _AboutSectionState extends State<AboutSection> {
                       ),
                       Text(
                         'I\'m a Flutter developer with a passion for creating elegant, user-centered mobile applications. With a background in both design and development, I bring a holistic approach to every project.',
-                        style: GoogleFonts.inter(
+                        style: TextStyle(
+                          fontFamily: 'Inter',
                           fontSize: 4.5.sp,
                           fontWeight: FontWeight.w400,
                           color: MyColors.textColor1,
@@ -173,7 +177,8 @@ class _AboutSectionState extends State<AboutSection> {
                       ),
                       Text(
                         'My journey in mobile development began 5 years ago, and I\'ve since worked with startups and established companies to deliver apps that users love. I believe in clean code, thoughtful architecture, and pixel-perfect implementation.',
-                        style: GoogleFonts.inter(
+                        style: TextStyle(
+                          fontFamily: 'Inter',
                           fontSize: 4.5.sp,
                           fontWeight: FontWeight.w400,
                           color: MyColors.textColor1,

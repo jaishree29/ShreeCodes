@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
 
 class SkillsCard extends StatefulWidget {
@@ -85,7 +84,8 @@ class _SkillsCardState extends State<SkillsCard> {
               Text(
                 widget.text,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.inter(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   color: MyColors.black,
                   fontSize: 4.5.sp,
                   fontWeight: FontWeight.w500,

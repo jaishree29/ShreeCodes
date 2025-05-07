@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
 
 class Footer extends StatelessWidget {
@@ -16,7 +15,8 @@ class Footer extends StatelessWidget {
           // Copyright section
           Text(
             '\u00a9 2025 Jaishree Tiwari. All rights reserved.',
-            style: GoogleFonts.inter(
+            style: TextStyle(
+              fontFamily: 'Inter',
               fontSize: 4.sp,
               fontWeight: FontWeight.w400,
               color: MyColors.textColor1,
@@ -34,7 +34,8 @@ class Footer extends StatelessWidget {
                 ),
                 child: Text(
                   'Privacy Policy',
-                  style: GoogleFonts.inter(
+                  style: TextStyle(
+                    fontFamily: 'Inter',
                     fontSize: 4.sp,
                     fontWeight: FontWeight.w400,
                     color: MyColors.textColor1,
@@ -51,7 +52,8 @@ class Footer extends StatelessWidget {
                 ),
                 child: Text(
                   'Terms of Service',
-                  style: GoogleFonts.inter(
+                  style: TextStyle(
+                    fontFamily: 'Inter',
                     fontSize: 4.sp,
                     fontWeight: FontWeight.w400,
                     color: MyColors.textColor1,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/url_launcher.dart';
@@ -105,7 +104,8 @@ class _ProjectCardState extends State<ProjectCard> {
                       Expanded(
                         child: Text(
                           widget.title,
-                          style: GoogleFonts.inter(
+                          style: TextStyle(
+                            fontFamily: 'Inter',
                             fontSize: 5.5.sp,
                             fontWeight: FontWeight.w600,
                           ),
@@ -147,7 +147,8 @@ class _ProjectCardState extends State<ProjectCard> {
                   // Project Description
                   Text(
                     widget.description,
-                    style: GoogleFonts.inter(
+                    style: TextStyle(
+                      fontFamily: 'Inter',
                       fontSize: 4.5.sp,
                       fontWeight: FontWeight.w400,
                       color: MyColors.textColor1,
@@ -174,7 +175,8 @@ class _ProjectCardState extends State<ProjectCard> {
                               ),
                               child: Text(
                                 tech,
-                                style: GoogleFonts.inter(
+                                style: TextStyle(
+                                  fontFamily: 'Inter',
                                   fontSize: 3.5.sp,
                                   fontWeight: FontWeight.w500,
                                   color: MyColors.black,

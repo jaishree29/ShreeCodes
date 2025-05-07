@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/image_strings.dart';
+import 'package:jaishree/utils/responsive_builder.dart';
 import 'package:jaishree/widgets/skills_card.dart';
 
 class SkillsSection extends StatefulWidget {
@@ -63,14 +63,27 @@ class _SkillsSectionState extends State<SkillsSection> {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ResponsiveBuilder.isMobile(context);
+    bool isTablet = ResponsiveBuilder.isTablet(context);
+
     return Column(
       children: [
-        SizedBox(height: 35.sp),
+        SizedBox(
+            height: isMobile
+                ? 75.sp
+                : isTablet
+                    ? 30.sp
+                    : 35.sp),
         Text(
           'Skills & Technologies',
-          style: GoogleFonts.inter(
-            fontSize: 9.sp,
-            fontWeight: FontWeight.w500,
+          style: TextStyle(
+            fontFamily: 'Inter',
+            fontSize: isMobile
+                ? 28.sp
+                : isTablet
+                    ? 12.sp
+                    : 9.sp,
+            fontWeight: isMobile ? FontWeight.w600 : FontWeight.w500,
           ),
         ),
         SizedBox(height: 3.sp),
@@ -79,7 +92,8 @@ class _SkillsSectionState extends State<SkillsSection> {
           child: Text(
             'I specialize in Flutter development with a focus on creating beautiful, responsive, and performant mobile applications.',
             textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
+            style: TextStyle(
+              fontFamily: 'Inter',
               fontSize: 4.5.sp,
               fontWeight: FontWeight.w400,
               color: MyColors.textColor1,
@@ -145,28 +159,30 @@ class _SkillsSectionState extends State<SkillsSection> {
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 2.sp),
             decoration: BoxDecoration(
-              color: _selectedTabIndex == index
-                  ? Colors.white
-                  : Colors.transparent,
-              borderRadius: BorderRadius.circular(1.sp),
-              boxShadow: [
-                BoxShadow(
-                  color: _selectedTabIndex == index
-                      ? MyColors.textColor3
-                      : Colors.transparent,
-                  blurRadius: 0.3.sp,
-                  spreadRadius: 0.2.sp,
-                  offset: const Offset(0, 0.7),
-                ),
-              ]
-            ),
+                color: _selectedTabIndex == index
+                    ? Colors.white
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(1.sp),
+                boxShadow: [
+                  BoxShadow(
+                    color: _selectedTabIndex == index
+                        ? MyColors.textColor3
+                        : Colors.transparent,
+                    blurRadius: 0.3.sp,
+                    spreadRadius: 0.2.sp,
+                    offset: const Offset(0, 0.7),
+                  ),
+                ]),
             child: Center(
               child: Text(
                 text,
-                style: GoogleFonts.inter(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   fontSize: 4.sp,
                   fontWeight: FontWeight.w500,
-                  color: _selectedTabIndex == index ? MyColors.black : MyColors.textColor4,
+                  color: _selectedTabIndex == index
+                      ? MyColors.black
+                      : MyColors.textColor4,
                 ),
               ),
             ),

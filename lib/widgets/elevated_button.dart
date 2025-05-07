@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
 
 class MyElevatedButton extends StatelessWidget {
@@ -71,7 +70,8 @@ class MyElevatedButton extends StatelessWidget {
             icon != null ? SizedBox(width: 2.sp) : const SizedBox.shrink(),
             Text(
               text,
-              style: GoogleFonts.poppins(
+              style: TextStyle(
+                fontFamily: 'Inter',
                 color: textColor,
                 fontSize: fontSize,
                 fontWeight: FontWeight.w500,

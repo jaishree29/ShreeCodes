@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/responsive_builder.dart';
 import 'package:jaishree/views/about_section.dart';
@@ -92,7 +91,8 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Text(
                           'Hello, I\'m ',
-                          style: GoogleFonts.inter(
+                          style: TextStyle(
+                            fontFamily: 'Inter',
                             fontSize: 33.sp,
                             fontWeight: FontWeight.w600,
                           ),
@@ -113,7 +113,8 @@ class _HomePageState extends State<HomePage> {
                             ),
                             Text(
                               'Jaishree Tiwari',
-                              style: GoogleFonts.inter(
+                              style: TextStyle(
+                                fontFamily: 'Inter',
                                 fontSize: 33.sp,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -129,7 +130,8 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Text(
                           'Hello, I\'m ',
-                          style: GoogleFonts.inter(
+                          style: TextStyle(
+                            fontFamily: 'Inter',
                             fontSize: isTablet ? 26.sp : 17.sp,
                             fontWeight: FontWeight.w500,
                           ),
@@ -150,9 +152,10 @@ class _HomePageState extends State<HomePage> {
                             ),
                             Text(
                               'Jaishree Tiwari',
-                              style: GoogleFonts.inter(
+                              style: TextStyle(
+                                fontFamily: 'Inter',
                                 fontSize: isTablet ? 26.sp : 17.sp,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ],
@@ -177,7 +180,8 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 'Flutter Developer crafting beautiful, performant mobile experiences with clean code and thoughtful design.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.inter(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                     fontSize: isMobile
                         ? 18.sp
                         : isTablet

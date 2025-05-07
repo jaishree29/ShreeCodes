@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/image_strings.dart';
 import 'package:jaishree/widgets/project_card.dart';
@@ -38,7 +37,8 @@ class _ProjectsSectionState extends State<ProjectsSection> {
       children: [
         Text(
           'Featured Projects',
-          style: GoogleFonts.inter(
+          style: TextStyle(
+            fontFamily: 'Inter',
             fontSize: 9.sp,
             fontWeight: FontWeight.w500,
           ),
@@ -49,7 +49,8 @@ class _ProjectsSectionState extends State<ProjectsSection> {
           child: Text(
             'A selection of my recent work, showcasing mobile applications built with Flutter.',
             textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
+            style: TextStyle(
+              fontFamily: 'Inter',
               fontSize: 4.5.sp,
               fontWeight: FontWeight.w400,
               color: MyColors.textColor1,

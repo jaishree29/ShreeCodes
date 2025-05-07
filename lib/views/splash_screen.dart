@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/responsive_builder.dart';
 import 'package:jaishree/views/home_page.dart';
@@ -48,7 +47,8 @@ class _SplashScreenState extends State<SplashScreen> {
               opacity: _visible ? 1.0 : 0.0,
               child: Text(
                 "ShreeCodes",
-                style: GoogleFonts.interTight(
+                style: TextStyle(
+                  fontFamily: 'Inter',
                   foreground: Paint()
                     ..shader = MyColors.linerGradient.createShader(
                       Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),

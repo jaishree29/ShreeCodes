@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/responsive_builder.dart';
 import 'package:jaishree/utils/url_launcher.dart';
@@ -38,7 +37,8 @@ class Navbar extends StatelessWidget {
         children: [
           Text(
             'ShreeCodes',
-            style: GoogleFonts.inter(
+            style: TextStyle(
+              fontFamily: 'Inter',
               fontSize: isMobile
                   ? 18.sp
                   : isTablet
@@ -160,7 +160,8 @@ class _NavItemState extends State<_NavItem> {
           onExit: (event) => setState(() => isHovered = false),
           child: Text(
             widget.title,
-            style: GoogleFonts.inter(
+            style: TextStyle(
+              fontFamily: 'Inter',
               fontSize: isTablet ? 6.sp : 4.3.sp,
               fontWeight: FontWeight.w400,
               color: isHovered ? MyColors.black : MyColors.textColor1,

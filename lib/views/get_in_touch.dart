@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/url_launcher.dart';
@@ -17,7 +16,8 @@ class GetInTouch extends StatelessWidget {
         SizedBox(height: 40.sp),
         Text(
           'Get in Touch',
-          style: GoogleFonts.inter(
+          style: TextStyle(
+            fontFamily: 'Inter',
             fontSize: 9.sp,
             fontWeight: FontWeight.w500,
           ),
@@ -28,7 +28,8 @@ class GetInTouch extends StatelessWidget {
           child: Text(
             'Interested in working together? Feel free to reach out for collaborations or just a friendly hello.',
             textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
+            style: TextStyle(
+              fontFamily: 'Inter',
               fontSize: 4.5.sp,
               fontWeight: FontWeight.w400,
               color: MyColors.textColor1,
