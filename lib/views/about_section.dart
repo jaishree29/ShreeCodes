@@ -62,7 +62,7 @@ class _AboutSectionState extends State<AboutSection> {
                         'I\'m a Flutter developer with a passion for creating elegant, user-centered mobile applications. With a background in both design and development, I bring a holistic approach to every project.',
                         style: TextStyle(
                           fontFamily: 'Inter',
-                          fontSize: 16.sp,
+                          fontSize: 15.5.sp,
                           fontWeight: FontWeight.w400,
                           color: MyColors.textColor1,
                         ),
@@ -74,7 +74,7 @@ class _AboutSectionState extends State<AboutSection> {
                         'My journey in mobile development began 5 years ago, and I\'ve since worked with startups and established companies to deliver apps that users love. I believe in clean code, thoughtful architecture, and pixel-perfect implementation.',
                         style: TextStyle(
                           fontFamily: 'Inter',
-                          fontSize: 16.sp,
+                          fontSize: 15.5.sp,
                           fontWeight: FontWeight.w400,
                           color: MyColors.textColor1,
                         ),
