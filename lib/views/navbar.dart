@@ -92,7 +92,11 @@ class Navbar extends StatelessWidget {
                   horizontal: 3.sp,
                   vertical: 2.5.sp,
                 ),
-                borderRadius: 20.sp,
+                borderRadius: isMobile
+                    ? 40.sp
+                    : isTablet
+                        ? 30.sp
+                        : 20.sp,
                 text: 'Resume',
                 textColor: MyColors.black,
                 onPressed: () =>

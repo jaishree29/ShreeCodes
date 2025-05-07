@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
               height: isMobile
                   ? 50.sp
                   : isTablet
-                      ? 10.sp
+                      ? 25.sp
                       : 15.sp,
             ),
             Row(
@@ -198,22 +198,26 @@ class _HomePageState extends State<HomePage> {
                     horizontal: isMobile
                         ? 18.sp
                         : isTablet
-                            ? 10.sp
+                            ? 8.sp
                             : 3.sp,
                     vertical: isMobile
                         ? 16.sp
                         : isTablet
-                            ? 10.sp
+                            ? 6.sp
                             : 2.5.sp,
                   ),
-                  borderRadius: 20.sp,
+                  borderRadius: isMobile
+                      ? 40.sp
+                      : isTablet
+                          ? 30.sp
+                          : 20.sp,
                   surfaceTintColor: const Color.fromARGB(255, 255, 255, 255),
                   text: 'Get in touch',
                   onPressed: () => _scrollToSection(_contactKey),
                   fontSize: isMobile
                       ? 13.sp
                       : isTablet
-                          ? 10.sp
+                          ? 6.5.sp
                           : 4.sp,
                   textPadding: EdgeInsets.symmetric(
                     horizontal: 3.sp,
@@ -224,7 +228,7 @@ class _HomePageState extends State<HomePage> {
                   width: isMobile
                       ? 16.sp
                       : isTablet
-                          ? 10.sp
+                          ? 8.sp
                           : 5.sp,
                 ),
                 MyElevatedButton(
@@ -241,22 +245,26 @@ class _HomePageState extends State<HomePage> {
                     horizontal: isMobile
                         ? 18.sp
                         : isTablet
-                            ? 10.sp
+                            ? 8.sp
                             : 3.sp,
                     vertical: isMobile
                         ? 16.sp
                         : isTablet
-                            ? 10.sp
+                            ? 6.sp
                             : 2.5.sp,
                   ),
-                  borderRadius: 20.sp,
+                  borderRadius: isMobile
+                      ? 40.sp
+                      : isTablet
+                          ? 30.sp
+                          : 20.sp,
                   text: 'View Projects',
                   textColor: MyColors.black,
                   onPressed: () => _scrollToSection(_projectsKey),
                   fontSize: isMobile
                       ? 13.sp
                       : isTablet
-                          ? 10.sp
+                          ? 6.5.sp
                           : 4.sp,
                   textPadding: EdgeInsets.symmetric(
                     horizontal: 3.sp,
