@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
     bool isMobile = ResponsiveBuilder.isMobile(context);
     bool isTablet = ResponsiveBuilder.isTablet(context);
     // bool isDesktop = ResponsiveBuilder.isDesktop(context);
-    // bool isLargeDesktop = ResponsiveBuilder.isLargeDesktop(context);
+    bool isLargeDesktop = ResponsiveBuilder.isLargeDesktop(context);
 
     return Scaffold(
       key: _scaffoldKey,
@@ -62,12 +62,17 @@ class _HomePageState extends State<HomePage> {
             decelerationRate: ScrollDecelerationRate.fast),
         child: Column(
           children: [
-            Navbar(
-              scaffoldKey: _scaffoldKey,
-              scrollToAbout: () => _scrollToSection(_aboutKey),
-              scrollToSkills: () => _scrollToSection(_skillsKey),
-              scrollToProjects: () => _scrollToSection(_projectsKey),
-              scrollToContact: () => _scrollToSection(_contactKey),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: isLargeDesktop ? 20.sp : 0.sp,
+              ),
+              child: Navbar(
+                scaffoldKey: _scaffoldKey,
+                scrollToAbout: () => _scrollToSection(_aboutKey),
+                scrollToSkills: () => _scrollToSection(_skillsKey),
+                scrollToProjects: () => _scrollToSection(_projectsKey),
+                scrollToContact: () => _scrollToSection(_contactKey),
+              ),
             ),
             isMobile
                 ? SizedBox(
@@ -238,7 +243,7 @@ class _HomePageState extends State<HomePage> {
                     width: isMobile
                         ? 1.5.sp
                         : isTablet
-                            ? 1.5.sp
+                            ? 0.8.sp
                             : 0.3.sp,
                   ),
                   padding: EdgeInsets.symmetric(
