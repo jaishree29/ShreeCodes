@@ -45,7 +45,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
             fontSize: isMobile
                 ? 28.sp
                 : isTablet
-                    ? 12.sp
+                    ? 12.5.sp
                     : 9.sp,
             fontWeight: isMobile ? FontWeight.w600 : FontWeight.w500,
           ),
@@ -56,7 +56,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
             horizontal: isMobile
                 ? 16.sp
                 : isTablet
-                    ? 70.sp
+                    ? 10.sp
                     : 90.sp,
           ),
           child: Text(
@@ -67,14 +67,15 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               fontSize: isMobile
                   ? 15.5.sp
                   : isTablet
-                      ? 5.5.sp
+                      ? 7.5.sp
                       : 4.5.sp,
               fontWeight: FontWeight.w400,
               color: MyColors.textColor1,
             ),
           ),
         ),
-        SizedBox(height:  isMobile
+        SizedBox(
+          height: isMobile
               ? 40.sp
               : isTablet
                   ? 20.sp
@@ -83,15 +84,31 @@ class _ProjectsSectionState extends State<ProjectsSection> {
 
         // Projects Grid
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: isMobile ? 20.sp : 40.sp),
+          padding: EdgeInsets.symmetric(
+            horizontal: isMobile
+                ? 20.sp
+                : isTablet
+                    ? 10.sp
+                    : 40.sp,
+          ),
           child: GridView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: isMobile ? 1 : 2,
-              crossAxisSpacing: isMobile ? 0.sp : 10.sp,
-              mainAxisSpacing: isMobile ? 30.sp : 10.sp,
-              childAspectRatio: isMobile ? 0.9 : 1.03,
+              crossAxisSpacing: isMobile ? 0.sp : isTablet
+                      ? 15.sp
+                      : 10.sp,
+              mainAxisSpacing: isMobile
+                  ? 30.sp
+                  : isTablet
+                      ? 15.sp
+                      : 10.sp,
+              childAspectRatio: isMobile
+                  ? 0.9
+                  : isTablet
+                      ? 0.93
+                      : 1.03,
             ),
             itemCount: projects.length,
             itemBuilder: (context, index) => ProjectCard(

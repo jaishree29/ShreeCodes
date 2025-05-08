@@ -286,7 +286,7 @@ class _HomePageState extends State<HomePage> {
               height: isMobile
                   ? 120.sp
                   : isTablet
-                      ? 50.sp
+                      ? 70.sp
                       : 35.sp,
             ),
             AboutSection(
@@ -303,7 +303,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             SizedBox(
-              height: 35.sp,
+              height: isTablet ? 45.sp : 35.sp,
             ),
             ProjectsSection(
               key: _projectsKey,

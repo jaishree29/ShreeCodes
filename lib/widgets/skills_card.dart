@@ -23,14 +23,14 @@ class _SkillsCardState extends State<SkillsCard> {
   @override
   Widget build(BuildContext context) {
     bool isMobile = ResponsiveBuilder.isMobile(context);
-    // bool isTablet = ResponsiveBuilder.isTablet(context);
+    bool isTablet = ResponsiveBuilder.isTablet(context);
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 50),
-        width: 65.sp,
-        height: 40.sp,
+        width: isTablet ? 75.sp : 65.sp,
+        height: isTablet ? 70.sp : 40.sp,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(isMobile ? 10.sp : 3.sp),
@@ -49,15 +49,38 @@ class _SkillsCardState extends State<SkillsCard> {
                 ]
               : [
                   BoxShadow(
-                    color: MyColors.textColor3.withAlpha(isMobile ? 80 : 50),
-                    blurRadius: isMobile ? 4 : 0,
+                    color: MyColors.textColor3.withAlpha(
+                      isMobile
+                          ? 80
+                          : isTablet
+                              ? 80
+                              : 50,
+                    ),
+                    blurRadius: isMobile
+                        ? 4
+                        : isTablet
+                            ? 4
+                            : 0,
                     spreadRadius: 0,
-                    offset: Offset(0, isMobile ? 4 : 0),
+                    offset: Offset(
+                      0,
+                      isMobile
+                          ? 4
+                          : isTablet
+                              ? 4
+                              : 0,
+                    ),
                   ),
                 ],
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: isMobile ? 2.sp : 7.sp, vertical: isMobile ? 1.sp : 7.sp),
+          padding: EdgeInsets.symmetric(
+              horizontal: isMobile
+                  ? 2.sp
+                  : isTablet
+                      ? 3.sp
+                      : 7.sp,
+              vertical: isMobile ? 1.sp : 7.sp),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -66,19 +89,35 @@ class _SkillsCardState extends State<SkillsCard> {
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: MyColors.textColor2,
-                    width: isMobile ? 1.sp : 0.3.sp,
+                    width: isMobile
+                        ? 1.sp
+                        : isTablet
+                            ? 0.5.sp
+                            : 0.3.sp,
                   ),
-                  borderRadius: BorderRadius.circular(isMobile ? 10.sp : 4.sp),
+                  borderRadius: BorderRadius.circular(isMobile
+                      ? 10.sp
+                      : isTablet
+                          ? 5.sp
+                          : 4.sp),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(isMobile ? 5.sp :2.sp),
+                  padding: EdgeInsets.all(isMobile ? 5.sp : 2.sp),
                   child: Image.network(
                     errorBuilder: (context, error, stackTrace) {
                       return Icon(Icons.error);
                     },
                     widget.icon,
-                    height: isMobile ? 30.sp : 10.sp,
-                    width: isMobile ? 30.sp : 10.sp,
+                    height: isMobile
+                        ? 30.sp
+                        : isTablet
+                            ? 12.sp
+                            : 10.sp,
+                    width: isMobile
+                        ? 30.sp
+                        : isTablet
+                            ? 12.sp
+                            : 10.sp,
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -90,7 +129,11 @@ class _SkillsCardState extends State<SkillsCard> {
                 style: TextStyle(
                   fontFamily: 'Inter',
                   color: MyColors.black,
-                  fontSize: isMobile ? 15.5.sp : 4.5.sp,
+                  fontSize: isMobile
+                      ? 15.5.sp
+                      : isTablet
+                          ? 5.5.sp
+                          : 4.5.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),

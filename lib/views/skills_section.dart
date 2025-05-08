@@ -72,7 +72,7 @@ class _SkillsSectionState extends State<SkillsSection> {
           height: isMobile
               ? 75.sp
               : isTablet
-                  ? 30.sp
+                  ? 50.sp
                   : 35.sp,
         ),
         Text(
@@ -82,7 +82,7 @@ class _SkillsSectionState extends State<SkillsSection> {
             fontSize: isMobile
                 ? 28.sp
                 : isTablet
-                    ? 12.sp
+                    ? 12.5.sp
                     : 9.sp,
             fontWeight: isMobile ? FontWeight.w600 : FontWeight.w500,
           ),
@@ -99,7 +99,7 @@ class _SkillsSectionState extends State<SkillsSection> {
             horizontal: isMobile
                 ? 16.sp
                 : isTablet
-                    ? 70.sp
+                    ? 10.sp
                     : 90.sp,
           ),
           child: Text(
@@ -110,7 +110,7 @@ class _SkillsSectionState extends State<SkillsSection> {
               fontSize: isMobile
                   ? 15.5.sp
                   : isTablet
-                      ? 5.5.sp
+                      ? 7.5.sp
                       : 4.5.sp,
               fontWeight: FontWeight.w400,
               color: MyColors.textColor1,
@@ -131,12 +131,12 @@ class _SkillsSectionState extends State<SkillsSection> {
             horizontal: isMobile
                 ? 16.sp
                 : isTablet
-                    ? 105.sp
+                    ? 100.sp
                     : 125.sp,
           ),
           decoration: BoxDecoration(
             color: MyColors.tabBg,
-            borderRadius: BorderRadius.circular(2.sp),
+            borderRadius: BorderRadius.circular(isTablet ? 3.sp : 2.sp),
           ),
           child: Row(
             children: [
@@ -159,7 +159,12 @@ class _SkillsSectionState extends State<SkillsSection> {
         SizedBox(
           height: isMobile ? 650.sp : 125.sp,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: isMobile ? 0.sp : 17.sp),
+            padding: EdgeInsets.symmetric(
+                horizontal: isMobile
+                    ? 0.sp
+                    : isTablet
+                        ? 0.sp
+                        : 17.sp),
             child: GridView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
@@ -170,17 +175,17 @@ class _SkillsSectionState extends State<SkillsSection> {
                 mainAxisSpacing: isMobile
                     ? 20.sp
                     : isTablet
-                        ? 5.sp
+                        ? 10.sp
                         : 7.sp,
                 crossAxisSpacing: isMobile
                     ? 20.sp
                     : isTablet
-                        ? 5.sp
+                        ? 10.sp
                         : 7.sp,
                 childAspectRatio: isMobile
                     ? 1.sp
                     : isTablet
-                        ? 1.sp
+                        ? 1.2.sp
                         : 0.5.sp,
               ),
               itemCount: _currentSkills.length,
@@ -191,6 +196,7 @@ class _SkillsSectionState extends State<SkillsSection> {
             ),
           ),
         ),
+        isTablet ? SizedBox(height: 20.sp) : SizedBox.shrink(),
       ],
     );
   }
@@ -215,11 +221,12 @@ class _SkillsSectionState extends State<SkillsSection> {
           ),
           child: Container(
             padding: EdgeInsets.symmetric(
-                vertical: isMobile
-                    ? 6.sp
-                    : isTablet
-                        ? 4.sp
-                        : 2.sp),
+              vertical: isMobile
+                  ? 6.sp
+                  : isTablet
+                      ? 3.sp
+                      : 2.sp,
+            ),
             decoration: BoxDecoration(
               color: _selectedTabIndex == index
                   ? Colors.white
@@ -250,9 +257,13 @@ class _SkillsSectionState extends State<SkillsSection> {
                   fontSize: isMobile
                       ? 13.sp
                       : isTablet
-                          ? 5.sp
+                          ? 6.sp
                           : 4.sp,
-                  fontWeight: isMobile ? FontWeight.w600 : FontWeight.w500,
+                  fontWeight: isMobile
+                      ? FontWeight.w600
+                      : isTablet
+                          ? FontWeight.w600
+                          : FontWeight.w500,
                   color: _selectedTabIndex == index
                       ? MyColors.black
                       : MyColors.textColor4,

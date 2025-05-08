@@ -24,14 +24,20 @@ class GetInTouch extends StatelessWidget {
             fontSize: isMobile
                 ? 28.sp
                 : isTablet
-                    ? 12.sp
+                    ? 12.5.sp
                     : 9.sp,
             fontWeight: isMobile ? FontWeight.w600 : FontWeight.w500,
           ),
         ),
         SizedBox(height: isMobile ? 20.sp : 5.sp),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: isMobile ? 10.sp : 105.sp),
+          padding: EdgeInsets.symmetric(
+            horizontal: isMobile
+                ? 10.sp
+                : isTablet
+                    ? 60.sp
+                    : 105.sp,
+          ),
           child: Text(
             'Interested in working together? Feel free to reach out for collaborations or just a friendly hello.',
             textAlign: TextAlign.center,
@@ -40,8 +46,8 @@ class GetInTouch extends StatelessWidget {
               fontSize: isMobile
                   ? 15.5.sp
                   : isTablet
-                      ? 5.sp
-                      : 90.sp,
+                      ? 7.sp
+                      : 4.5.sp,
               fontWeight: FontWeight.w400,
               color: MyColors.textColor1,
             ),
