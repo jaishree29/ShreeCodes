@@ -133,7 +133,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             fontFamily: 'Inter',
                             fontSize: isTablet ? 26.sp : 17.sp,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                         Stack(
@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                               child: Transform.translate(
                                 offset: Offset(0, isTablet ? -7.5.sp : -5.5.sp),
                                 child: Container(
-                                  width: isTablet ? 190.sp : 124.sp,
+                                  width: isTablet ? 193.sp : 126.sp,
                                   height: isTablet ? 2.5.sp : 1.5.sp,
                                   color: MyColors.textColor3,
                                 ),
@@ -309,7 +309,7 @@ class _HomePageState extends State<HomePage> {
               key: _projectsKey,
             ),
             SizedBox(
-              height: 40.sp,
+              height: isMobile ? 70.sp : 40.sp,
             ),
             Container(
               width: MediaQuery.of(context).size.width * 1,

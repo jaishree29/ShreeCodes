@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jaishree/utils/colors.dart';
+import 'package:jaishree/utils/responsive_builder.dart';
 
 class SkillsCard extends StatefulWidget {
   final String icon;
@@ -21,6 +22,8 @@ class _SkillsCardState extends State<SkillsCard> {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ResponsiveBuilder.isMobile(context);
+    // bool isTablet = ResponsiveBuilder.isTablet(context);
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
@@ -30,7 +33,7 @@ class _SkillsCardState extends State<SkillsCard> {
         height: 40.sp,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(3.sp),
+          borderRadius: BorderRadius.circular(isMobile ? 10.sp : 3.sp),
           border: Border.all(
             color: MyColors.textColor3.withOpacity(0.6),
             width: 0.3.sp,
@@ -46,15 +49,15 @@ class _SkillsCardState extends State<SkillsCard> {
                 ]
               : [
                   BoxShadow(
-                    color: MyColors.textColor3.withAlpha(50),
-                    blurRadius: 0,
+                    color: MyColors.textColor3.withAlpha(isMobile ? 80 : 50),
+                    blurRadius: isMobile ? 4 : 0,
                     spreadRadius: 0,
-                    offset: const Offset(0, 0),
+                    offset: Offset(0, isMobile ? 4 : 0),
                   ),
                 ],
         ),
         child: Padding(
-          padding: EdgeInsets.all(7.sp),
+          padding: EdgeInsets.symmetric(horizontal: isMobile ? 2.sp : 7.sp, vertical: isMobile ? 1.sp : 7.sp),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,31 +66,31 @@ class _SkillsCardState extends State<SkillsCard> {
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: MyColors.textColor2,
-                    width: 0.3.sp,
+                    width: isMobile ? 1.sp : 0.3.sp,
                   ),
-                  borderRadius: BorderRadius.circular(4.sp),
+                  borderRadius: BorderRadius.circular(isMobile ? 10.sp : 4.sp),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(2.sp),
+                  padding: EdgeInsets.all(isMobile ? 5.sp :2.sp),
                   child: Image.network(
                     errorBuilder: (context, error, stackTrace) {
-                      return Icon(Icons.error); 
+                      return Icon(Icons.error);
                     },
                     widget.icon,
-                    height: 10.sp,
-                    width: 10.sp,
+                    height: isMobile ? 30.sp : 10.sp,
+                    width: isMobile ? 30.sp : 10.sp,
                     fit: BoxFit.contain,
                   ),
                 ),
               ),
-              SizedBox(height: 3.sp),
+              SizedBox(height: isMobile ? 15.sp : 3.sp),
               Text(
                 widget.text,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Inter',
                   color: MyColors.black,
-                  fontSize: 4.5.sp,
+                  fontSize: isMobile ? 15.5.sp : 4.5.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),

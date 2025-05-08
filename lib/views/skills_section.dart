@@ -88,18 +88,20 @@ class _SkillsSectionState extends State<SkillsSection> {
           ),
         ),
         SizedBox(
-            height: isMobile
-                ? 16.sp
-                : isTablet
-                    ? 5.sp
-                    : 3.sp),
+          height: isMobile
+              ? 16.sp
+              : isTablet
+                  ? 5.sp
+                  : 3.sp,
+        ),
         Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: isMobile
-                  ? 16.sp
-                  : isTablet
-                      ? 70.sp
-                      : 90.sp),
+            horizontal: isMobile
+                ? 16.sp
+                : isTablet
+                    ? 70.sp
+                    : 90.sp,
+          ),
           child: Text(
             'I specialize in Flutter development with a focus on creating beautiful, responsive, and performant mobile applications.',
             textAlign: TextAlign.center,
@@ -155,23 +157,23 @@ class _SkillsSectionState extends State<SkillsSection> {
 
         // Skills Grid
         SizedBox(
-          height: 125.sp,
+          height: isMobile ? 650.sp : 125.sp,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 17.sp),
+            padding: EdgeInsets.symmetric(horizontal: isMobile ? 0.sp : 17.sp),
             child: GridView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               padding: EdgeInsets.symmetric(horizontal: 20.sp),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisExtent: isMobile ? 100.sp : 80.sp,
+                mainAxisExtent: isMobile ? 130.sp : 45.sp,
                 crossAxisCount: isMobile ? 2 : 4,
                 mainAxisSpacing: isMobile
-                    ? 15.sp
+                    ? 20.sp
                     : isTablet
                         ? 5.sp
                         : 7.sp,
                 crossAxisSpacing: isMobile
-                    ? 15.sp
+                    ? 20.sp
                     : isTablet
                         ? 5.sp
                         : 7.sp,
@@ -222,11 +224,13 @@ class _SkillsSectionState extends State<SkillsSection> {
               color: _selectedTabIndex == index
                   ? Colors.white
                   : Colors.transparent,
-              borderRadius: BorderRadius.circular(isMobile
-                  ? 5.sp
-                  : isTablet
-                      ? 3.sp
-                      : 1.sp),
+              borderRadius: BorderRadius.circular(
+                isMobile
+                    ? 5.sp
+                    : isTablet
+                        ? 3.sp
+                        : 1.sp,
+              ),
               boxShadow: [
                 BoxShadow(
                   color: _selectedTabIndex == index

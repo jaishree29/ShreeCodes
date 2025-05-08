@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jaishree/utils/colors.dart';
+import 'package:jaishree/utils/responsive_builder.dart';
 
 class MyElevatedButton extends StatelessWidget {
   const MyElevatedButton({
@@ -40,6 +41,7 @@ class MyElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ResponsiveBuilder.isMobile(context);
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
@@ -67,7 +69,7 @@ class MyElevatedButton extends StatelessWidget {
                     color: iconColor,
                   )
                 : const SizedBox.shrink(),
-            icon != null ? SizedBox(width: 2.sp) : const SizedBox.shrink(),
+            icon != null ? SizedBox(width: isMobile ? 8.sp : 2.sp) : const SizedBox.shrink(),
             Text(
               text,
               style: TextStyle(

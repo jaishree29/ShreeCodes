@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:jaishree/utils/colors.dart';
+import 'package:jaishree/utils/responsive_builder.dart';
 import 'package:jaishree/utils/url_launcher.dart';
 
 class ProjectCard extends StatefulWidget {
@@ -30,13 +31,14 @@ class _ProjectCardState extends State<ProjectCard> {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ResponsiveBuilder.isMobile(context);
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 100),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(2.sp),
+          borderRadius: BorderRadius.circular(isMobile ? 12.sp : 2.sp),
           // border: Border.all(
           //   color: MyColors.border,
           // ),
@@ -52,13 +54,15 @@ class _ProjectCardState extends State<ProjectCard> {
                 ]
               : [
                   BoxShadow(
-                    color: MyColors.textColor3.withOpacity(0.2),
+                    color:
+                        MyColors.textColor3.withOpacity(isMobile ? 0.5 : 0.2),
                     blurRadius: 0.2.sp,
                     spreadRadius: 0.5.sp,
                     offset: Offset(0, 0.5.sp),
                   ),
                   BoxShadow(
-                    color: MyColors.textColor3.withOpacity(0.2),
+                    color:
+                        MyColors.textColor3.withOpacity(isMobile ? 0.5 : 0.2),
                     blurRadius: 0.2.sp,
                     spreadRadius: 0.5.sp,
                     offset: Offset(0, 0.5.sp),
@@ -71,17 +75,17 @@ class _ProjectCardState extends State<ProjectCard> {
             // Project Image
             ClipRRect(
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(2.sp),
-                topRight: Radius.circular(2.sp),
+                topLeft: Radius.circular(isMobile ? 12.sp : 2.sp),
+                topRight: Radius.circular(isMobile ? 12.sp : 2.sp),
               ),
               child: Image.network(
                 widget.imageUrl,
-                height: 85.sp,
+                height: isMobile ? 180.sp : 85.sp,
                 width: double.infinity,
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) => Image.network(
                   'https://www.tandempm.ie/wp-content/uploads/placeholder.png',
-                  height: 85.sp,
+                  height: isMobile ? 180.sp : 85.sp,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
@@ -90,9 +94,9 @@ class _ProjectCardState extends State<ProjectCard> {
 
             Padding(
               padding: EdgeInsets.only(
-                left: 8.sp,
-                right: 8.sp,
-                top: 8.sp,
+                left: isMobile ? 15.sp : 8.sp,
+                right: isMobile ? 15.sp : 8.sp,
+                top: isMobile ? 25.sp : 8.sp,
                 bottom: 6.sp,
               ),
               child: Column(
@@ -106,7 +110,7 @@ class _ProjectCardState extends State<ProjectCard> {
                           widget.title,
                           style: TextStyle(
                             fontFamily: 'Inter',
-                            fontSize: 5.5.sp,
+                            fontSize: isMobile ? 16.sp : 5.5.sp,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -120,7 +124,8 @@ class _ProjectCardState extends State<ProjectCard> {
                           onExit: (event) =>
                               setState(() => _isArrowHovered = false),
                           child: GestureDetector(
-                            onTap: () => UrlLauncherHelper.launchInNewTab(widget.url),
+                            onTap: () =>
+                                UrlLauncherHelper.launchInNewTab(widget.url),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: _isArrowHovered
@@ -132,7 +137,7 @@ class _ProjectCardState extends State<ProjectCard> {
                                 padding: EdgeInsets.all(2.sp),
                                 child: Icon(
                                   HugeIcons.strokeRoundedArrowUpRight01,
-                                  size: 5.sp,
+                                  size: isMobile ? 16.sp : 5.sp,
                                 ),
                               ),
                             ),
@@ -142,42 +147,44 @@ class _ProjectCardState extends State<ProjectCard> {
                     ],
                   ),
 
-                  SizedBox(height: 3.sp),
+                  SizedBox(height: isMobile ? 10.sp : 3.sp),
 
                   // Project Description
                   Text(
                     widget.description,
                     style: TextStyle(
                       fontFamily: 'Inter',
-                      fontSize: 4.5.sp,
+                      fontSize: isMobile ? 14.5.sp : 4.5.sp,
                       fontWeight: FontWeight.w400,
                       color: MyColors.textColor1,
                     ),
-                    maxLines: 2,
+                    maxLines: isMobile ? 3 : 2,
                     overflow: TextOverflow.ellipsis,
                   ),
 
-                  SizedBox(height: 6.sp),
+                  SizedBox(height: isMobile ? 15.sp : 6.sp),
 
                   // Technology Tags
                   Wrap(
-                    spacing: 2.5.sp,
+                    spacing: isMobile ? 10.sp : 2.5.sp,
                     runSpacing: 5.sp,
                     children: widget.technologies
                         .map((tech) => Container(
                               padding: EdgeInsets.symmetric(
-                                horizontal: 3.sp,
-                                vertical: 1.sp,
+                                horizontal: isMobile ? 10.sp : 3.sp,
+                                vertical: isMobile ? 2.sp : 1.sp,
                               ),
                               decoration: BoxDecoration(
                                 color: MyColors.tabBg,
-                                borderRadius: BorderRadius.circular(4.sp),
+                                borderRadius: BorderRadius.circular(
+                                  isMobile ? 10.sp : 4.sp,
+                                ),
                               ),
                               child: Text(
                                 tech,
                                 style: TextStyle(
                                   fontFamily: 'Inter',
-                                  fontSize: 3.5.sp,
+                                  fontSize: isMobile ? 12.sp : 3.5.sp,
                                   fontWeight: FontWeight.w500,
                                   color: MyColors.black,
                                 ),

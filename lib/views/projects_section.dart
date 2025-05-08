@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/image_strings.dart';
+import 'package:jaishree/utils/responsive_builder.dart';
 import 'package:jaishree/widgets/project_card.dart';
 
 class ProjectsSection extends StatefulWidget {
@@ -33,43 +34,64 @@ class _ProjectsSectionState extends State<ProjectsSection> {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ResponsiveBuilder.isMobile(context);
+    bool isTablet = ResponsiveBuilder.isTablet(context);
     return Column(
       children: [
         Text(
           'Featured Projects',
           style: TextStyle(
             fontFamily: 'Inter',
-            fontSize: 9.sp,
-            fontWeight: FontWeight.w500,
+            fontSize: isMobile
+                ? 28.sp
+                : isTablet
+                    ? 12.sp
+                    : 9.sp,
+            fontWeight: isMobile ? FontWeight.w600 : FontWeight.w500,
           ),
         ),
         SizedBox(height: 3.sp),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 90.sp),
+          padding: EdgeInsets.symmetric(
+            horizontal: isMobile
+                ? 16.sp
+                : isTablet
+                    ? 70.sp
+                    : 90.sp,
+          ),
           child: Text(
             'A selection of my recent work, showcasing mobile applications built with Flutter.',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Inter',
-              fontSize: 4.5.sp,
+              fontSize: isMobile
+                  ? 15.5.sp
+                  : isTablet
+                      ? 5.5.sp
+                      : 4.5.sp,
               fontWeight: FontWeight.w400,
               color: MyColors.textColor1,
             ),
           ),
         ),
-        SizedBox(height: 15.sp),
+        SizedBox(height:  isMobile
+              ? 40.sp
+              : isTablet
+                  ? 20.sp
+                  : 15.sp,
+        ),
 
         // Projects Grid
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40.sp),
+          padding: EdgeInsets.symmetric(horizontal: isMobile ? 20.sp : 40.sp),
           child: GridView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 10.sp,
-              mainAxisSpacing: 10.sp,
-              childAspectRatio: 1.03,
+              crossAxisCount: isMobile ? 1 : 2,
+              crossAxisSpacing: isMobile ? 0.sp : 10.sp,
+              mainAxisSpacing: isMobile ? 30.sp : 10.sp,
+              childAspectRatio: isMobile ? 0.9 : 1.03,
             ),
             itemCount: projects.length,
             itemBuilder: (context, index) => ProjectCard(
