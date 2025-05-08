@@ -142,7 +142,7 @@ class _AboutSectionState extends State<AboutSection> {
                   height: isTablet ? 150.sp : 140.sp,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage(MyImages.profileImage),
+                      image: AssetImage(MyImages.profileImage),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.circular(isTablet ? 6.sp : 4.sp),

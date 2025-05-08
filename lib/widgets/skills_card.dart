@@ -103,7 +103,7 @@ class _SkillsCardState extends State<SkillsCard> {
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(isMobile ? 5.sp : 2.sp),
-                  child: Image.network(
+                  child: Image.asset(
                     errorBuilder: (context, error, stackTrace) {
                       return Icon(Icons.error);
                     },

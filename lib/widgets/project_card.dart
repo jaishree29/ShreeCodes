@@ -101,7 +101,7 @@ class _ProjectCardState extends State<ProjectCard> {
                           : 2.sp,
                 ),
               ),
-              child: Image.network(
+              child: Image.asset(
                 widget.imageUrl,
                 height: isMobile
                     ? 180.sp
