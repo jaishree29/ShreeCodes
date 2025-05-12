@@ -11,7 +11,7 @@ class EmailWebView extends StatefulWidget {
 }
 
 class _EmailWebViewState extends State<EmailWebView> {
-  WebViewController? _webViewController; // nullable webview controller
+  // WebViewController? _webViewController; // nullable webview controller
 
   @override
   Widget build(BuildContext context) {
