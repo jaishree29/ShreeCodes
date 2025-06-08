@@ -1,7 +1,7 @@
 class MyImages {
   //development skills icons
   static const String flutterIcon = 'assets/logos/flutter.png';
-  static const String profileImage = 'assets/images/profile-image.jpg';
+  static const String profileImage = 'assets/images/profile-image.png';
   static const String dartIcon = 'assets/logos/dart.png';
   static const String firebaseIcon = 'assets/logos/firebase.png';
   static const String gitIcon = 'assets/logos/git.png';

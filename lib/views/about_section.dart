@@ -180,7 +180,7 @@ class _AboutSectionState extends State<AboutSection> {
                         height: isTablet ? 10.sp :  8.sp,
                       ),
                       Text(
-                        'My journey in mobile development began 5 years ago, and I\'ve since worked with startups and established companies to deliver apps that users love. I believe in clean code, thoughtful architecture, and pixel-perfect implementation.',
+                        'My journey in mobile development began 2 years ago, and I\'ve since worked with startups and established companies to deliver apps that users love. I believe in clean code, thoughtful architecture, and pixel-perfect implementation.',
                         style: TextStyle(
                           fontFamily: 'Inter',
                           fontSize: isTablet ? 6.8.sp :  4.5.sp,
