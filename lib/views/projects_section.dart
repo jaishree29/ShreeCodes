@@ -16,13 +16,29 @@ class _ProjectsSectionState extends State<ProjectsSection> {
   final List<Map<String, dynamic>> projects = [
     {
       'imageUrl': MyImages.thatGirlImage,
-      'title': 'E-Commerce App',
+      'title': 'ThatGirl: An e-commerce App',
       'description':
-          'ThatGirl: A complete e-commerce solution with product listing, cart, and payment integration.',
-      'technologies': ['Flutter', 'Firebase', 'Laravel'],
+          'A complete e-commerce solution with product listing, cart, and payment integration.',
+      'technologies': ['Flutter', 'Firebase', 'Laravel', 'Provider'],
       'url': 'https://github.com/jaishree29/thatGirlApp',
       'previewUrl':
           'https://drive.google.com/file/d/19suC99h31dLwKaI4Ukh3wIHHui68HnV4/view?usp=drive_link'
+    },
+    {
+      'imageUrl': MyImages.canteenoImage,
+      'title': 'Canteeno',
+      'description':
+          'A modern digital canteen application to streamline meal ordering for students and canteen owner.',
+      'technologies': ['Flutter', 'Provider', 'Firebase'],
+      'url': 'https://github.com/jaishree29/resume-builder',
+      'previewUrl': 'https://drive.google.com/file/d/1Z5DJ-AaQrDo9VF4O31eyldgtyPPH2Qm9/view?usp=drive_link',
+    },
+    {
+      'imageUrl': MyImages.localeezyImage,
+      'title': 'Localeezy',
+      'description':
+          'A platform for local businesses to connect with customers, offering features like product listings, reviews, and location-based services.',
+      'technologies': ['Flutter', 'Provider', 'Golang'],
     },
     {
       'imageUrl': MyImages.resumeBuilderImage,
@@ -31,15 +47,6 @@ class _ProjectsSectionState extends State<ProjectsSection> {
           'An application for creating and managing resumes with various templates.',
       'technologies': ['Flutter', 'Provider', 'Firebase'],
       'url': 'https://github.com/jaishree29/resume-builder',
-    },
-    {
-      'imageUrl': MyImages.resumeBuilderImage,
-      'title': 'MyCanteen',
-      'description':
-          'A modern digital canteen application to streamline meal ordering for students and canteen owner.',
-      'technologies': ['Flutter', 'Provider', 'Firebase'],
-      'url': 'https://github.com/jaishree29/resume-builder',
-      'previewUrl': 'https://drive.google.com/file/d/1Z5DJ-AaQrDo9VF4O31eyldgtyPPH2Qm9/view?usp=drive_link',
     },
   ];
 

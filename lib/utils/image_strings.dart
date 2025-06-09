@@ -36,4 +36,6 @@ class MyImages {
   // Projects images
   static const String thatGirlImage = 'assets/images/ThatGirl.png';
   static const String resumeBuilderImage = 'assets/images/ResumeBuilder.png';
+  static const String localeezyImage = 'assets/images/Localeezy.jpg';
+  static const String canteenoImage = 'assets/images/Canteeno.jpg';
 }

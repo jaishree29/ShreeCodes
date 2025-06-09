@@ -21,7 +21,6 @@ class Footer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Copyright section
                 Text(
                   '\u00a9 2025 Jaishree Tiwari. All rights reserved.',
                   style: TextStyle(
@@ -47,22 +46,20 @@ class Footer extends StatelessWidget {
                               PolicySection(
                                 title: 'Information Collection',
                                 content: [
-                                  'We collect minimal information required to provide you with the best experience. This includes:',
-                                  '• Usage data to improve our service\n• Contact information when you reach out\n• Technical data for analytics and improvements',
+                                  'This portfolio website does not collect personal information or use cookies.',
+                                  'Any contact information you provide is used solely to respond to your inquiries.',
                                 ],
                               ),
                               PolicySection(
                                 title: 'Data Usage',
                                 content: [
-                                  'Your data is used solely for:',
-                                  '• Improving user experience\n• Analyzing website performance\n• Responding to your inquiries',
+                                  'Information shared via contact forms or emails is used strictly for communication purposes and is not stored or shared with third parties.',
                                 ],
                               ),
                               PolicySection(
                                 title: 'Data Protection',
                                 content: [
-                                  'We implement security measures to protect your information:',
-                                  '• Encryption of sensitive data\n• Regular security updates\n• Limited access to personal information',
+                                  'This website is intended to showcase the work of Jaishree Tiwari and does not store any user data.',
                                 ],
                               ),
                             ],
@@ -98,21 +95,20 @@ class Footer extends StatelessWidget {
                               PolicySection(
                                 title: 'Acceptance of Terms',
                                 content: [
-                                  'By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.',
+                                  'By accessing this website, you agree to use it solely for informational and personal, non-commercial purposes.',
                                 ],
                               ),
                               PolicySection(
-                                title: 'Use License',
+                                title: 'Intellectual Property',
                                 content: [
-                                  'Permission is granted to temporarily view the materials (information or software) on ShreeCodes\'s website for personal, non-commercial transitory viewing only.',
-                                  'This is the grant of a license, not a transfer of title, and under this license you may not:',
-                                  '• Modify or copy the materials\n• Use the materials for any commercial purpose\n• Attempt to decompile or reverse engineer any software contained on the website',
+                                  'All content, including text, images, and designs, is owned by Jaishree Tiwari and is protected by copyright.',
+                                  'Unauthorized use, reproduction, or redistribution of content is prohibited.',
                                 ],
                               ),
                               PolicySection(
                                 title: 'Disclaimer',
                                 content: [
-                                  'The materials on ShreeCodes\'s website are provided on an \'as is\' basis. ShreeCodes makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.',
+                                  'This website is provided as-is without warranties of any kind. The content is for informational purposes only.',
                                 ],
                               ),
                             ],
@@ -144,7 +140,6 @@ class Footer extends StatelessWidget {
           : Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Copyright section
                 Text(
                   '\u00a9 2025 Jaishree Tiwari. All rights reserved.',
                   style: TextStyle(
@@ -154,7 +149,6 @@ class Footer extends StatelessWidget {
                     color: MyColors.textColor1,
                   ),
                 ),
-
                 Row(
                   children: [
                     TextButton(
@@ -167,22 +161,20 @@ class Footer extends StatelessWidget {
                               PolicySection(
                                 title: 'Information Collection',
                                 content: [
-                                  'We collect minimal information required to provide you with the best experience. This includes:',
-                                  '• Usage data to improve our service\n• Contact information when you reach out\n• Technical data for analytics and improvements',
+                                  'This portfolio website does not collect personal information or use cookies.',
+                                  'Any contact information you provide is used solely to respond to your inquiries.',
                                 ],
                               ),
                               PolicySection(
                                 title: 'Data Usage',
                                 content: [
-                                  'Your data is used solely for:',
-                                  '• Improving user experience\n• Analyzing website performance\n• Responding to your inquiries',
+                                  'Information shared via contact forms or emails is used strictly for communication purposes and is not stored or shared with third parties.',
                                 ],
                               ),
                               PolicySection(
                                 title: 'Data Protection',
                                 content: [
-                                  'We implement security measures to protect your information:',
-                                  '• Encryption of sensitive data\n• Regular security updates\n• Limited access to personal information',
+                                  'This website is intended to showcase the work of Jaishree Tiwari and does not store any user data.',
                                 ],
                               ),
                             ],
@@ -217,21 +209,20 @@ class Footer extends StatelessWidget {
                               PolicySection(
                                 title: 'Acceptance of Terms',
                                 content: [
-                                  'By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.',
+                                  'By accessing this website, you agree to use it solely for informational and personal, non-commercial purposes.',
                                 ],
                               ),
                               PolicySection(
-                                title: 'Use License',
+                                title: 'Intellectual Property',
                                 content: [
-                                  'Permission is granted to temporarily view the materials (information or software) on ShreeCodes\'s website for personal, non-commercial transitory viewing only.',
-                                  'This is the grant of a license, not a transfer of title, and under this license you may not:',
-                                  '• Modify or copy the materials\n• Use the materials for any commercial purpose\n• Attempt to decompile or reverse engineer any software contained on the website',
+                                  'All content, including text, images, and designs, is owned by Jaishree Tiwari and is protected by copyright.',
+                                  'Unauthorized use, reproduction, or redistribution of content is prohibited.',
                                 ],
                               ),
                               PolicySection(
                                 title: 'Disclaimer',
                                 content: [
-                                  'The materials on ShreeCodes\'s website are provided on an \'as is\' basis. ShreeCodes makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.',
+                                  'This website is provided as-is without warranties of any kind. The content is for informational purposes only.',
                                 ],
                               ),
                             ],
