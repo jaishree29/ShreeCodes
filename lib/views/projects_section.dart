@@ -21,6 +21,8 @@ class _ProjectsSectionState extends State<ProjectsSection> {
           'ThatGirl: A complete e-commerce solution with product listing, cart, and payment integration.',
       'technologies': ['Flutter', 'Firebase', 'Laravel'],
       'url': 'https://github.com/jaishree29/thatGirlApp',
+      'previewUrl':
+          'https://drive.google.com/file/d/19suC99h31dLwKaI4Ukh3wIHHui68HnV4/view?usp=drive_link'
     },
     {
       'imageUrl': MyImages.resumeBuilderImage,
@@ -29,6 +31,15 @@ class _ProjectsSectionState extends State<ProjectsSection> {
           'An application for creating and managing resumes with various templates.',
       'technologies': ['Flutter', 'Provider', 'Firebase'],
       'url': 'https://github.com/jaishree29/resume-builder',
+    },
+    {
+      'imageUrl': MyImages.resumeBuilderImage,
+      'title': 'MyCanteen',
+      'description':
+          'A modern digital canteen application to streamline meal ordering for students and canteen owner.',
+      'technologies': ['Flutter', 'Provider', 'Firebase'],
+      'url': 'https://github.com/jaishree29/resume-builder',
+      'previewUrl': 'https://drive.google.com/file/d/1Z5DJ-AaQrDo9VF4O31eyldgtyPPH2Qm9/view?usp=drive_link',
     },
   ];
 
@@ -96,7 +107,9 @@ class _ProjectsSectionState extends State<ProjectsSection> {
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: isMobile ? 1 : 2,
-              crossAxisSpacing: isMobile ? 0.sp : isTablet
+              crossAxisSpacing: isMobile
+                  ? 0.sp
+                  : isTablet
                       ? 15.sp
                       : 10.sp,
               mainAxisSpacing: isMobile
@@ -117,6 +130,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               description: projects[index]['description'],
               technologies: List<String>.from(projects[index]['technologies']),
               url: projects[index]['url'],
+              previewUrl: projects[index]['previewUrl'],
             ),
           ),
         ),

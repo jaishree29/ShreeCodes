@@ -37,7 +37,27 @@ class UrlLauncherHelper {
   }
 
   static Future<void> launchEmail(String email, {BuildContext? context}) async {
-    await launchInNewTab('mailto:$email', context: context);
+    try {
+      final Uri emailUri = Uri(
+        scheme: 'mailto',
+        path: email,
+      );
+
+      if (await canLaunchUrl(emailUri)) {
+        await launchUrl(emailUri);
+      } else if (context != null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Could not launch email client')),
+        );
+      }
+    } catch (e) {
+      debugPrint('Error launching email: $e');
+      if (context != null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Failed to open email client')),
+        );
+      }
+    }
   }
 
   static Future<void> launchPhone(String phone, {BuildContext? context}) async {

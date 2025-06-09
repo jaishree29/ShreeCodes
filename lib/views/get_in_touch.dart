@@ -16,7 +16,7 @@ class GetInTouch extends StatelessWidget {
     bool isTablet = ResponsiveBuilder.isTablet(context);
     return Column(
       children: [
-        SizedBox(height: isMobile ? 80.sp : 40.sp),
+        SizedBox(height: isMobile ? 80.sp : 60.sp),
         Text(
           'Get in Touch',
           style: TextStyle(
@@ -59,7 +59,7 @@ class GetInTouch extends StatelessWidget {
           children: [
             MyElevatedButton(
               text: 'Email me',
-              onPressed: () => UrlLauncherHelper.launchInNewTab(
+              onPressed: () => UrlLauncherHelper.launchEmail(
                 MyUrls.email,
                 context: context,
               ),
@@ -145,7 +145,7 @@ class GetInTouch extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: isMobile ? 80.sp : 40.sp),
+        SizedBox(height: isMobile ? 80.sp : 60.sp),
       ],
     );
   }

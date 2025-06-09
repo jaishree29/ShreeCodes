@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jaishree/utils/colors.dart';
 import 'package:jaishree/utils/responsive_builder.dart';
-import 'package:jaishree/utils/url_launcher.dart';
-import 'package:jaishree/utils/urls.dart';
 import 'package:jaishree/widgets/elevated_button.dart';
 
 class Navbar extends StatelessWidget {
@@ -14,6 +12,7 @@ class Navbar extends StatelessWidget {
     required this.scrollToSkills,
     required this.scrollToProjects,
     required this.scrollToContact,
+    required this.scrollToExperience,
   });
 
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -21,6 +20,7 @@ class Navbar extends StatelessWidget {
   final VoidCallback scrollToSkills;
   final VoidCallback scrollToProjects;
   final VoidCallback scrollToContact;
+  final VoidCallback scrollToExperience;
 
   @override
   Widget build(BuildContext context) {
@@ -64,8 +64,8 @@ class Navbar extends StatelessWidget {
                   onTap: scrollToProjects,
                 ),
                 _NavItem(
-                  title: 'Contact',
-                  onTap: scrollToContact,
+                  title: 'Experience',
+                  onTap: scrollToExperience,
                 ),
               ],
             ),
@@ -97,11 +97,14 @@ class Navbar extends StatelessWidget {
                     : isTablet
                         ? 30.sp
                         : 20.sp,
-                text: 'Resume',
+                text: 'Contact',
                 textColor: MyColors.black,
-                onPressed: () =>
-                    UrlLauncherHelper.launchInNewTab(MyUrls.resume),
-                fontSize: isMobile ? 12.5.sp : isTablet ? 5.5.sp : 4.sp,
+                onPressed: scrollToContact,
+                fontSize: isMobile
+                    ? 12.5.sp
+                    : isTablet
+                        ? 5.5.sp
+                        : 4.sp,
                 textPadding: EdgeInsets.symmetric(
                   horizontal: isMobile
                       ? 10.sp

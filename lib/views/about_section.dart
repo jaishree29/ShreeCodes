@@ -37,8 +37,11 @@ class _AboutSectionState extends State<AboutSection> {
                   height: 340.sp,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage(MyImages.profileImage),
+                      image: AssetImage(MyImages.profileImage),
                       fit: BoxFit.cover,
+                      onError: (error, stackTrace) {
+                        print('Error loading image: $error');
+                      },
                     ),
                     borderRadius: BorderRadius.circular(12.sp),
                   ),
@@ -75,7 +78,7 @@ class _AboutSectionState extends State<AboutSection> {
                         height: 20.sp,
                       ),
                       Text(
-                        'My journey in mobile development began 5 years ago, and I\'ve since worked with startups and established companies to deliver apps that users love. I believe in clean code, thoughtful architecture, and pixel-perfect implementation.',
+                        'My journey in mobile development began 2 years ago, and I\'ve since worked with startups and established companies to deliver apps that users love. I believe in clean code, thoughtful architecture, and pixel-perfect implementation.',
                         style: TextStyle(
                           fontFamily: 'Inter',
                           fontSize: 15.5.sp,
@@ -149,10 +152,10 @@ class _AboutSectionState extends State<AboutSection> {
                   ),
                 ),
                 SizedBox(
-                  width: isTablet ? 20.sp :  15.sp,
+                  width: isTablet ? 20.sp : 15.sp,
                 ),
                 SizedBox(
-                  width: isTablet ? 170.sp :  143.sp,
+                  width: isTablet ? 170.sp : 143.sp,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -177,13 +180,13 @@ class _AboutSectionState extends State<AboutSection> {
                         ),
                       ),
                       SizedBox(
-                        height: isTablet ? 10.sp :  8.sp,
+                        height: isTablet ? 10.sp : 8.sp,
                       ),
                       Text(
                         'My journey in mobile development began 2 years ago, and I\'ve since worked with startups and established companies to deliver apps that users love. I believe in clean code, thoughtful architecture, and pixel-perfect implementation.',
                         style: TextStyle(
                           fontFamily: 'Inter',
-                          fontSize: isTablet ? 6.8.sp :  4.5.sp,
+                          fontSize: isTablet ? 6.8.sp : 4.5.sp,
                           fontWeight: FontWeight.w400,
                           color: MyColors.textColor1,
                         ),

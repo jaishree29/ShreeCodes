@@ -10,7 +10,8 @@ class ProjectCard extends StatefulWidget {
   final String title;
   final String description;
   final List<String> technologies;
-  final String url;
+  final String? url;
+  final String? previewUrl;
 
   const ProjectCard({
     super.key,
@@ -18,7 +19,8 @@ class ProjectCard extends StatefulWidget {
     required this.title,
     required this.description,
     required this.technologies,
-    required this.url,
+    this.url,
+    this.previewUrl,
   });
 
   @override
@@ -28,6 +30,7 @@ class ProjectCard extends StatefulWidget {
 class _ProjectCardState extends State<ProjectCard> {
   bool _isHovered = false;
   bool _isArrowHovered = false;
+  bool _isPreviewHovered = false;
 
   @override
   Widget build(BuildContext context) {
@@ -162,39 +165,133 @@ class _ProjectCardState extends State<ProjectCard> {
                           ),
                         ),
                       ),
-                      AnimatedOpacity(
-                        opacity: _isHovered ? 1.0 : 0.0,
-                        duration: const Duration(milliseconds: 100),
-                        child: MouseRegion(
-                          onEnter: (event) =>
-                              setState(() => _isArrowHovered = true),
-                          onExit: (event) =>
-                              setState(() => _isArrowHovered = false),
-                          child: GestureDetector(
-                            onTap: () =>
-                                UrlLauncherHelper.launchInNewTab(widget.url),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: _isArrowHovered
-                                    ? MyColors.tabBg
-                                    : Colors.transparent,
-                                shape: BoxShape.circle,
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(2.sp),
-                                child: Icon(
-                                  HugeIcons.strokeRoundedArrowUpRight01,
-                                  size: isMobile
-                                      ? 16.sp
-                                      : isTablet
-                                          ? 8.5.sp
-                                          : 5.sp,
-                                ),
-                              ),
-                            ),
-                          ),
+                      // onEnter: (event) =>
+                      //           setState(() => _isArrowHovered = true),
+                      //       onExit: (event) =>
+                      //           setState(() => _isArrowHovered = false),
+                      if (!isMobile)
+                        Row(
+                          children: [
+                            widget.url != null
+                                ? AnimatedOpacity(
+                                    opacity: _isHovered ? 1.0 : 0.0,
+                                    duration: const Duration(milliseconds: 100),
+                                    child: MouseRegion(
+                                      onEnter: (event) => setState(
+                                          () => _isArrowHovered = true),
+                                      onExit: (event) => setState(
+                                          () => _isArrowHovered = false),
+                                      child: GestureDetector(
+                                        onTap: () =>
+                                            UrlLauncherHelper.launchInNewTab(
+                                                widget.url!),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: _isArrowHovered
+                                                ? MyColors.tabBg
+                                                : Colors.transparent,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Padding(
+                                            padding: EdgeInsets.all(2.sp),
+                                            child: Icon(
+                                              HugeIcons
+                                                  .strokeRoundedArrowUpRight01,
+                                              size: isTablet ? 8.5.sp : 5.sp,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : SizedBox.shrink(),
+                            widget.previewUrl != null
+                                ? SizedBox(width: 2.sp)
+                                : SizedBox.shrink(),
+                            widget.previewUrl != null
+                                ? AnimatedOpacity(
+                                    opacity: _isHovered ? 1.0 : 0.0,
+                                    duration: const Duration(milliseconds: 100),
+                                    child: MouseRegion(
+                                      onEnter: (event) => setState(
+                                          () => _isPreviewHovered = true),
+                                      onExit: (event) => setState(
+                                          () => _isPreviewHovered = false),
+                                      child: GestureDetector(
+                                        onTap: () =>
+                                            UrlLauncherHelper.launchInNewTab(
+                                                widget.previewUrl!),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: _isPreviewHovered
+                                                ? MyColors.tabBg
+                                                : Colors.transparent,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Padding(
+                                            padding: EdgeInsets.all(2.sp),
+                                            child: Icon(
+                                              HugeIcons.strokeRoundedView,
+                                              size: isTablet ? 8.5.sp : 5.sp,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : SizedBox.shrink(),
+                          ],
                         ),
-                      ),
+                      if (isMobile) // Show static arrow on mobile
+                        Row(
+                          children: [
+                            widget.url != null
+                                ? GestureDetector(
+                                    onTap: () =>
+                                        UrlLauncherHelper.launchInNewTab(
+                                            widget.url!),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: MyColors.tabBg,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(8.sp),
+                                        child: Icon(
+                                          HugeIcons.strokeRoundedArrowUpRight01,
+                                          size: 16.sp,
+                                          color: MyColors.black,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : SizedBox.shrink(),
+                            widget.previewUrl != null
+                                ? SizedBox(width: 2.sp)
+                                : SizedBox.shrink(),
+                            widget.previewUrl != null
+                                ? GestureDetector(
+                                    onTap: () =>
+                                        UrlLauncherHelper.launchInNewTab(
+                                            widget.previewUrl!),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: MyColors.tabBg,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(8.sp),
+                                        child: Icon(
+                                          HugeIcons.strokeRoundedView,
+                                          size: 16.sp,
+                                          color: MyColors.black,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : SizedBox.shrink(),
+                          ],
+                        ),
                     ],
                   ),
 
