@@ -18,7 +18,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
       'imageUrl': MyImages.thatGirlImage,
       'title': 'ThatGirl: An e-commerce App',
       'description':
-          'A complete e-commerce solution with product listing, cart, and payment integration.',
+          'Complete e-commerce solution with product listing, cart, and payment integration.',
       'technologies': ['Flutter', 'Firebase', 'Laravel', 'Provider'],
       'url': 'https://github.com/jaishree29/thatGirlApp',
       'previewUrl':

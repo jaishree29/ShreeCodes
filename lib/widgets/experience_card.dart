@@ -27,7 +27,8 @@ class ExperienceCard extends StatelessWidget {
     bool isTablet = ResponsiveBuilder.isTablet(context);
 
     return Padding(
-      padding: isMobile ? EdgeInsets.only(right: 10.sp) : EdgeInsets.only(right: 0),
+      padding:
+          isMobile ? EdgeInsets.only(right: 10.sp) : EdgeInsets.only(right: 0),
       child: Container(
         padding: EdgeInsets.only(
           left: isMobile
@@ -65,40 +66,56 @@ class ExperienceCard extends StatelessWidget {
               ),
             ),
             SizedBox(height: isMobile ? 8.sp : 4.sp),
-            Row(
-              children: [
-                Flexible(
-                  child: Text(
-                    company,
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontSize: isMobile
-                          ? 15.sp
-                          : isTablet
-                              ? 6.sp
-                              : 4.5.sp,
-                      fontWeight: FontWeight.w500,
-                      color: MyColors.textColor1,
-                    ),
+            isMobile
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        company,
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                          color: MyColors.textColor1,
+                        ),
+                      ),
+                      Text(
+                        duration,
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 12.sp,
+                          color: MyColors.textColor,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  )
+                : Row(
+                    children: [
+                      Flexible(
+                        child: Text(
+                          company,
+                          style: TextStyle(
+                            fontFamily: 'Inter',
+                            fontSize: isTablet ? 6.sp : 4.5.sp,
+                            fontWeight: FontWeight.w500,
+                            color: MyColors.textColor1,
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Text(
+                          ' • $duration',
+                          style: TextStyle(
+                            fontFamily: 'Inter',
+                            fontSize: isTablet ? 5.5.sp : 4.sp,
+                            color: MyColors.textColor,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                Flexible(
-                  child: Text(
-                    ' • $duration',
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontSize: isMobile
-                          ? 14.sp
-                          : isTablet
-                              ? 5.5.sp
-                              : 4.sp,
-                      color: MyColors.textColor,
-                    ),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ],
-            ),
             SizedBox(height: isMobile ? 12.sp : 6.sp),
             Text(
               description,

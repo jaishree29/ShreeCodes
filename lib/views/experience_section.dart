@@ -120,6 +120,18 @@ class ExperienceSection extends StatelessWidget {
 
   static final List<ExperienceData> _experiences = [
     ExperienceData(
+      role: 'Research Intern',
+      company: 'National Internet Exchange of India',
+      duration: 'June 2025 - Present',
+      description:
+          'Researching on OHTTP to enhance security during data transfers',
+      achievements: [
+        'Supporting research on Oblivious HTTP (OHTTP), contributing to internal drafts and protocol analysis.',
+        'Participated in 3+ national multi-stakeholder conferences, gaining exposure to internet governance and privacy discussions',
+        'Tracked 100% of weekly deliverables using structured project diaries and collaboration tools.',
+      ],
+    ),
+    ExperienceData(
       role: 'Flutter Developer',
       company: 'Work Binders Pvt. Ltd.',
       duration: 'Dec 2024 - Feb 2025',
@@ -142,6 +154,18 @@ class ExperienceSection extends StatelessWidget {
         'Implemented real-time menus, order tracking, authentication, sorting, and payments.',
         'Enhanced user experience with efficient state management.',
         'Improved app security through secure authentication and data encryption.',
+      ],
+    ),
+    ExperienceData(
+      role: 'Trainee/Intern',
+      company: 'Maruti Suzuki India Ltd.',
+      duration: 'August 2024 - Sept 2024',
+      description:
+          'Worked on automating tasks with WIS (Work Instruction Sheets)',
+      achievements: [
+        'Assisted in 1,000+ daily two-wheeler engine assemblies on high-speed production lines.',
+        'Followed safety SOPs and machinery protocols, improving compliance by 15%.',
+        'Contributed to documentation updates later adopted across 3 production teams.',
       ],
     ),
   ];
