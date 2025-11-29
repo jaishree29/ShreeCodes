@@ -37,7 +37,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
       'imageUrl': MyImages.localeezyImage,
       'title': 'Localeezy',
       'description':
-          'A platform for local businesses to connect with customers, offering features like product listings, reviews, and location-based services.',
+          'A platform that connects local business owners with customers in their vicinity.',
       'technologies': ['Flutter', 'Provider', 'Golang'],
     },
     {

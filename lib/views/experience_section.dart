@@ -74,10 +74,10 @@ class ExperienceSection extends StatelessWidget {
           ),
           FixedTimeline.tileBuilder(
             theme: TimelineThemeData(
-              nodePosition: 0.04, // Adjusted to move timeline slightly down
+              nodePosition: 0.04, // Timeline position slightly down
               color: MyColors.textColor3,
               indicatorTheme: IndicatorThemeData(
-                position: 0.15, // Adjusted to align with card content
+                position: 0.15, // Alignment with card content
                 size: isMobile ? 16.sp : 8.sp,
               ),
               connectorTheme: ConnectorThemeData(
@@ -89,7 +89,7 @@ class ExperienceSection extends StatelessWidget {
               itemCount: _experiences.length,
               contentsBuilder: (_, index) => Padding(
                 padding: EdgeInsets.only(
-                  left: isMobile ? 20.sp : 12.sp, // Increased left padding
+                  left: isMobile ? 20.sp : 12.sp,
                   bottom: index == _experiences.length - 1
                       ? 0
                       : (isMobile ? 40.sp : 20.sp),
@@ -120,19 +120,43 @@ class ExperienceSection extends StatelessWidget {
 
   static final List<ExperienceData> _experiences = [
     ExperienceData(
+      role: 'Associate Software Developer',
+      company: 'Lark Finserv Pvt. Ltd.',
+      duration: 'Oct 2025 - Present',
+      description:
+          'Building LarkX - an app that offers loans against mutual funds under 10 mins',
+      achievements: [
+        'Spearheaded development of LarkX app using Flutter, enabling instant loans against mutual funds.',
+        'Implemented secure user authentication and seamless fund linking.',
+        'Developed real-time loan processing and disbursement features.',
+      ],
+    ),
+    ExperienceData(
+      role: 'Flutter Developer Intern',
+      company: 'Slaaang Media Pvt. Ltd.',
+      duration: 'Sept 2025 - Present',
+      description:
+          'Working on Slaaang - a social media platform which allows you to be social anonymously',
+      achievements: [
+        'Built a video calling feature using WebRTC, enabling high-quality peer-to-peer video communication within the app.',
+        'Optimized video streaming performance, reducing latency by 30% and enhancing user experience.',
+        'Reduced cost of third-party services by implementing in-house solutions for video processing and delivery.',
+      ],
+    ),
+    ExperienceData(
       role: 'Research Intern',
       company: 'National Internet Exchange of India',
-      duration: 'June 2025 - Present',
+      duration: 'July 2025 - Sept 2025',
       description:
-          'Researching on OHTTP to enhance security during data transfers',
+          'Researched on OHTTP to enhance security during data transfers',
       achievements: [
-        'Supporting research on Oblivious HTTP (OHTTP), contributing to internal drafts and protocol analysis.',
+        'Supported research on Oblivious HTTP (OHTTP), contributing to internal drafts and protocol analysis.',
         'Participated in 3+ national multi-stakeholder conferences, gaining exposure to internet governance and privacy discussions',
         'Tracked 100% of weekly deliverables using structured project diaries and collaboration tools.',
       ],
     ),
     ExperienceData(
-      role: 'Flutter Developer',
+      role: 'Flutter Developer Intern',
       company: 'Work Binders Pvt. Ltd.',
       duration: 'Dec 2024 - Feb 2025',
       description: 'Developed a feature-rich e-commerce app using Flutter.',
@@ -144,7 +168,7 @@ class ExperienceSection extends StatelessWidget {
       ],
     ),
     ExperienceData(
-      role: 'Flutter Developer',
+      role: 'Flutter Developer Intern',
       company: 'NotClg',
       duration: 'Sept 2024 - Dec 2024',
       description:

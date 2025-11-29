@@ -105,19 +105,19 @@ class _AboutSectionState extends State<AboutSection> {
                           SizedBox(
                             width: 5.sp,
                           ),
-                          IconButton(
-                            splashColor: MyColors.buttonSplash1,
-                            onPressed: () => UrlLauncherHelper.launchInNewTab(
-                                MyUrls.linkedin),
-                            icon: HugeIcon(
-                              icon: HugeIcons.strokeRoundedLinkedin02,
-                              size: 16.sp,
-                              color: MyColors.black,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 16.sp,
-                          ),
+                          // IconButton(
+                          //   splashColor: MyColors.buttonSplash1,
+                          //   onPressed: () => UrlLauncherHelper.launchInNewTab(
+                          //       MyUrls.linkedin),
+                          //   icon: HugeIcon(
+                          //     icon: HugeIcons.strokeRoundedLinkedin02,
+                          //     size: 16.sp,
+                          //     color: MyColors.black,
+                          //   ),
+                          // ),
+                          // SizedBox(
+                          //   width: 16.sp,
+                          // ),
                           IconButton(
                             splashColor: MyColors.buttonSplash1,
                             onPressed: () => UrlLauncherHelper.launchInNewTab(
@@ -210,19 +210,19 @@ class _AboutSectionState extends State<AboutSection> {
                           SizedBox(
                             width: isTablet ? 7.sp : 5.sp,
                           ),
-                          IconButton(
-                            splashColor: MyColors.buttonSplash1,
-                            onPressed: () => UrlLauncherHelper.launchInNewTab(
-                                MyUrls.linkedin),
-                            icon: HugeIcon(
-                              icon: HugeIcons.strokeRoundedLinkedin02,
-                              size: isTablet ? 7.sp : 5.sp,
-                              color: MyColors.black,
-                            ),
-                          ),
-                          SizedBox(
-                            width: isTablet ? 7.sp : 5.sp,
-                          ),
+                          // IconButton(
+                          //   splashColor: MyColors.buttonSplash1,
+                          //   onPressed: () => UrlLauncherHelper.launchInNewTab(
+                          //       MyUrls.linkedin),
+                          //   icon: HugeIcon(
+                          //     icon: HugeIcons.strokeRoundedLinkedin02,
+                          //     size: isTablet ? 7.sp : 5.sp,
+                          //     color: MyColors.black,
+                          //   ),
+                          // ),
+                          // SizedBox(
+                          //   width: isTablet ? 7.sp : 5.sp,
+                          // ),
                           IconButton(
                             splashColor: MyColors.buttonSplash1,
                             onPressed: () => UrlLauncherHelper.launchInNewTab(

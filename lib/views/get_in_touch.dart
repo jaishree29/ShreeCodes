@@ -54,96 +54,103 @@ class GetInTouch extends StatelessWidget {
           ),
         ),
         SizedBox(height: isMobile ? 50.sp : 10.sp),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            MyElevatedButton(
-              text: 'Email me',
-              onPressed: () => UrlLauncherHelper.launchEmail(
-                MyUrls.email,
-                context: context,
-              ),
-              borderRadius: isMobile
-                  ? 40.sp
-                  : isTablet
-                      ? 30.sp
-                      : 20.sp,
-              padding: EdgeInsets.symmetric(
-                horizontal: isMobile
-                    ? 25.sp
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: isMobile
+                ? 10.sp
+                : 0.sp,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              MyElevatedButton(
+                text: 'Email me',
+                onPressed: () => UrlLauncherHelper.launchEmail(
+                  MyUrls.email,
+                  context: context,
+                ),
+                borderRadius: isMobile
+                    ? 40.sp
                     : isTablet
-                        ? 8.sp
-                        : 3.sp,
-                vertical: isMobile
-                    ? 14.sp
+                        ? 30.sp
+                        : 20.sp,
+                padding: EdgeInsets.symmetric(
+                  horizontal: isMobile
+                      ? 25.sp
+                      : isTablet
+                          ? 8.sp
+                          : 3.sp,
+                  vertical: isMobile
+                      ? 14.sp
+                      : isTablet
+                          ? 5.sp
+                          : 2.5.sp,
+                ),
+                textPadding:
+                    EdgeInsets.symmetric(horizontal: 3.sp, vertical: 2.5.sp),
+                fontSize: isMobile
+                    ? 13.sp
                     : isTablet
                         ? 5.sp
-                        : 2.5.sp,
+                        : 4.sp,
+                icon: HugeIcons.strokeRoundedMail01,
+                surfaceTintColor: MyColors.surfaceColor,
+                iconSize: isMobile ? 14.sp : 5.sp,
               ),
-              textPadding:
-                  EdgeInsets.symmetric(horizontal: 3.sp, vertical: 2.5.sp),
-              fontSize: isMobile
-                  ? 13.sp
-                  : isTablet
-                      ? 5.sp
-                      : 4.sp,
-              icon: HugeIcons.strokeRoundedMail01,
-              surfaceTintColor: MyColors.surfaceColor,
-              iconSize: isMobile ? 14.sp : 5.sp,
-            ),
-            SizedBox(
-              width: isMobile
-                  ? 16.sp
-                  : isTablet
-                      ? 8.sp
-                      : 5.sp,
-            ),
-            MyElevatedButton(
-              text: 'Connect on LinkedIn',
-              onPressed: () => UrlLauncherHelper.launchInNewTab(
-                MyUrls.linkedin,
-                context: context,
-              ),
-              borderSide: BorderSide(
-                color: MyColors.textColor2,
+              SizedBox(
                 width: isMobile
-                    ? 1.5.sp
+                    ? 8.sp
                     : isTablet
-                        ? 0.8.sp
-                        : 0.3.sp,
+                        ? 6.sp
+                        : 5.sp,
               ),
-              borderRadius: isMobile
-                  ? 40.sp
-                  : isTablet
-                      ? 30.sp
-                      : 20.sp,
-              padding: EdgeInsets.symmetric(
-                horizontal: isMobile
-                    ? 25.sp
+              MyElevatedButton(
+                text: 'Connect on X/Twitter',
+                onPressed: () => UrlLauncherHelper.launchInNewTab(
+                  MyUrls.twitter,
+                  context: context,
+                ),
+                borderSide: BorderSide(
+                  color: MyColors.textColor2,
+                  width: isMobile
+                      ? 1.5.sp
+                      : isTablet
+                          ? 0.8.sp
+                          : 0.3.sp,
+                ),
+                borderRadius: isMobile
+                    ? 40.sp
                     : isTablet
-                        ? 8.sp
-                        : 3.sp,
-                vertical: isMobile
-                    ? 14.sp
+                        ? 30.sp
+                        : 20.sp,
+                padding: EdgeInsets.symmetric(
+                  horizontal: isMobile
+                      ? 25.sp
+                      : isTablet
+                          ? 8.sp
+                          : 3.sp,
+                  vertical: isMobile
+                      ? 14.sp
+                      : isTablet
+                          ? 5.sp
+                          : 2.5.sp,
+                ),
+                textPadding:
+                    EdgeInsets.symmetric(horizontal: 3.sp, vertical: 2.5.sp),
+                fontSize: isMobile
+                    ? 13.sp
                     : isTablet
                         ? 5.sp
-                        : 2.5.sp,
+                        : 4.sp,
+                icon: HugeIcons.strokeRoundedTwitter,
+                backgroundColor: Colors.white,
+                foregroundColor: MyColors.black,
+                surfaceTintColor: MyColors.buttonSplash2,
+                textColor: MyColors.black,
+                iconSize: isMobile ? 13.5.sp : 4.5.sp,
               ),
-              textPadding:
-                  EdgeInsets.symmetric(horizontal: 3.sp, vertical: 2.5.sp),
-              fontSize: isMobile
-                  ? 13.sp
-                  : isTablet
-                      ? 5.sp
-                      : 4.sp,
-              icon: HugeIcons.strokeRoundedLinkedin02,
-              backgroundColor: Colors.white,
-              foregroundColor: MyColors.black,
-              surfaceTintColor: MyColors.buttonSplash2,
-              textColor: MyColors.black,
-              iconSize: isMobile ? 13.5.sp : 4.5.sp,
-            ),
-          ],
+            ],
+          ),
         ),
         SizedBox(height: isMobile ? 80.sp : 60.sp),
       ],
